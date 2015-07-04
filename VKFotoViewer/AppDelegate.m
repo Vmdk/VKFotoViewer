@@ -8,8 +8,6 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
-#import <VKSdk/VKSdk.h>
-
 @interface AppDelegate ()
 
 @end

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0425CBBC-D1E5-4CCB-B50E-4F782F11C1C8</string>
+	<key>IDESourceControlProjectName</key>
+	<string>VKFotoViewer</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1C5296C83C61590B995FEED4B651CF16076B9C26</key>
+		<string>https://github.com/Vmdk/VKFotoViewer.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>VKFotoViewer.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1C5296C83C61590B995FEED4B651CF16076B9C26</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Vmdk/VKFotoViewer.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1C5296C83C61590B995FEED4B651CF16076B9C26</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1C5296C83C61590B995FEED4B651CF16076B9C26</string>
+			<key>IDESourceControlWCCName</key>
+			<string>VKFotoViewerGit</string>
+		</dict>
+	</array>
+</dict>
+</plist>

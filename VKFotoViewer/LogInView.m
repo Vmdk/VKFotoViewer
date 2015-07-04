@@ -7,21 +7,18 @@
 //
 
 #import "LogInView.h"
-#import <VKSdk/VKSdk.h>
 @implementation LogInView
 
-
-
-
-
-
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+- (void)viewDidLoad
 {
-    [VKSdk processOpenURL:url fromApplication:sourceApplication];
-    return YES;
+    [super viewDidLoad];
+    
+    NSURL *lURL = [NSURL URLWithString:@"https://oauth.vk.com/authorize?client_id=4982333&scope=6&redirect_uri=https://oauth.vk.com/blank.html&display=mobile&v=5.34&response_type=token"];
+    [_myBrowser loadRequest:[NSURLRequest requestWithURL:lURL]];
 }
+
+
 
 @end
 
-//https://oauth.vk.com/authorize?client_id=APP_ID&scope=PERMISSIONS&redirect_uri=REDIRECT_URI&display=DISPLAY&v=API_VERSION&response_type=token
-//NSUser..?..Default
+//https://oauth.vk.com/authorize?client_id=4982333&scope=6&redirect_uri=https://oauth.vk.com/blank.html&display=mobile&v=5.34&response_type=token

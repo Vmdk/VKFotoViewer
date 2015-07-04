@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "LogInView.h"
 
 @interface ViewController ()
 
@@ -25,7 +26,8 @@
 }
 
 - (IBAction)logInClick:(id)sender {
-    
+    LogInView *logVC = [[LogInView alloc] initWithNibName:@"LogInView" bundle:nil];
+    [self  presentViewController:logVC animated:YES completion:nil];
 }
 
 @end
