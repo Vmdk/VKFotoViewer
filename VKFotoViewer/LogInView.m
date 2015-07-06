@@ -7,6 +7,8 @@
 //
 
 #import "LogInView.h"
+
+// TODO == 2
 @implementation LogInView
 
 - (void)viewDidLoad
@@ -18,6 +20,52 @@
 }
 
 
+-(void)webViewDidFinishLoad:(UIWebView *)webView {
+    // get token
+    if ([_myBrowser.request.URL.absoluteString rangeOfString:@"access_token"].location != NSNotFound) {
+        NSString *accessToken = [self stringBetweenString:@"access_token="
+                                                andString:@"&"
+                                              innerString:[[[webView request] URL] absoluteString]];
+        
+        // get user's id
+        NSArray *userAr = [[[[webView request] URL] absoluteString] componentsSeparatedByString:@"&user_id="];
+        NSString *user_id = [userAr lastObject];
+        //save user's id
+        if(user_id){
+            [[NSUserDefaults standardUserDefaults] setObject:user_id forKey:@"VKAccessUserId"];
+        }
+        //save token
+        if(accessToken){
+            [[NSUserDefaults standardUserDefaults] setObject:accessToken forKey:@"VKAccessToken"];
+            //save token's time
+            [[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:@"VKAccessTokenDate"];
+            //later add syncro, cheking token's time etc..   TODO
+            //[[NSUserDefaults standardUserDefaults] synchronize];
+        }
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else if ([_myBrowser.request.URL.absoluteString rangeOfString:@"error"].location != NSNotFound) {
+        //add smthng if wrong auth  TODO
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+    
+}
+
+//returns us string between "start" and "end"
+- (NSString*)stringBetweenString:(NSString*)start
+                       andString:(NSString*)end
+                     innerString:(NSString*)str
+{
+    NSScanner* scanner = [NSScanner scannerWithString:str];
+    [scanner setCharactersToBeSkipped:nil];
+    [scanner scanUpToString:start intoString:NULL];
+    if ([scanner scanString:start intoString:NULL]) {
+        NSString* result = nil;
+        if ([scanner scanUpToString:end intoString:&result]) {
+            return result;
+        }
+    }
+    return nil;
+}
 
 @end
 
