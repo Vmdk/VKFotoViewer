@@ -28,8 +28,8 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (_friendsId.count<15) {
-        return _friendsId.count;
+    if (_names.count<15) {
+        return _names.count;
     }
     return 15;
 }
@@ -42,6 +42,11 @@
     
     lCell.textLabel.text = [_names objectAtIndex:indexPath.row];
     return lCell;
+}
+
+- (void)setTempArr {
+    _names = [NSMutableArray arrayWithObjects:@"10",@"11",@"12",@"13",@"14",@"15",@"16",@"17", nil];
+    [_friendsList reloadData];
 }
 
 -(void)setFriends:(NSArray *)arr {
@@ -72,7 +77,7 @@
                                                        timeoutInterval:60.0];
     NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
     
-    NSDictionary* userInfo = [NSJSONSerialization JSONObjectWithData:responseData options:NSNotFound error:nil];
+    NSDictionary* userInfo = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingAllowFragments error:nil];
     NSString *name = userInfo[@"response"][0][@"first_name"];
     NSString *lastName = userInfo[@"response"][0][@"last_name"];
     return [NSString stringWithFormat:@"%@ %@",name,lastName];

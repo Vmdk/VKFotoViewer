@@ -13,4 +13,5 @@
 }
 
 - (void)setFriends:(NSArray*)arr;
+- (void)setTempArr;
 @end

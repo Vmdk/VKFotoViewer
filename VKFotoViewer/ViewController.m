@@ -30,12 +30,14 @@
 - (IBAction)logInClick:(id)sender {
     LogInView *logVC = [[LogInView alloc] initWithNibName:@"LogInView" bundle:nil];
     logVC.baseDelegate = self;
+    //[self presentViewController:logVC animated:YES completion:nil];
     [self presentViewController:logVC animated:YES completion:nil];
 }
 
 - (void)afterAuth {
     FriendsListVC *friendVC = [[FriendsListVC alloc] initWithNibName:@"FriendsListVC" bundle:nil];
-    [friendVC setFriends:[self friendRequest]];
+    [friendVC setTempArr];
+    //[friendVC setFriends:[self friendRequest]];
     [self presentViewController:friendVC animated:YES completion:nil];
 }
 
@@ -50,9 +52,9 @@
                                                        timeoutInterval:60.0];
     NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
     
-    
-    //NSLog([[NSUserDefaults standardUserDefaults] objectForKey:@"VKAccessUserId"]);
-    //NSLog([[NSUserDefaults standardUserDefaults] objectForKey:@"VKAccessToken"]);
+    //here in log u can see, that token and user's id are correct
+    NSLog([[NSUserDefaults standardUserDefaults] objectForKey:@"VKAccessUserId"]);
+    NSLog([[NSUserDefaults standardUserDefaults] objectForKey:@"VKAccessToken"]);
     NSDictionary *friendsId = [NSJSONSerialization JSONObjectWithData:responseData options:NSNotFound error:nil];
     NSArray *idArray = friendsId[@"response"];
     return idArray;

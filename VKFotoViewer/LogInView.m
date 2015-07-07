@@ -9,13 +9,14 @@
 #import "LogInView.h"
 #import "ViewController.h"
 
-// TODO == 2
+// TODO == 3
 @implementation LogInView
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    //cleaning catche. Should be removed smwhr TODO
+    [[NSURLCache sharedURLCache] removeAllCachedResponses];
     NSURL *lURL = [NSURL URLWithString:@"https://oauth.vk.com/authorize?client_id=4982333&scope=6&redirect_uri=https://oauth.vk.com/blank.html&display=mobile&v=5.34&response_type=token"];
     [_myBrowser loadRequest:[NSURLRequest requestWithURL:lURL]];
 }
@@ -41,14 +42,14 @@
             //save token's time
             [[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:@"VKAccessTokenDate"];
             //later add syncro, cheking token's time etc..   TODO
-            //[[NSUserDefaults standardUserDefaults] synchronize];
+            [[NSUserDefaults standardUserDefaults] synchronize];
         }
         [self dismissViewControllerAnimated:YES completion:nil];
+        [(ViewController*)_baseDelegate afterAuth];
     } else if ([_myBrowser.request.URL.absoluteString rangeOfString:@"error"].location != NSNotFound) {
         //add smthng if wrong auth  TODO
         [self dismissViewControllerAnimated:YES completion:nil];
     }
-    [(ViewController*)_baseDelegate afterAuth];
 }
 
 //returns us string between "start" and "end"
@@ -67,6 +68,7 @@
     }
     return nil;
 }
+
 
 @end
 
