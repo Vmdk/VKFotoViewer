@@ -12,6 +12,6 @@
     IBOutlet UIButton *_logInButton;
 }
 
-
+- (void)afterAuth;
 @end
 

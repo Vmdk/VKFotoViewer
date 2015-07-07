@@ -7,6 +7,7 @@
 //
 
 #import "LogInView.h"
+#import "ViewController.h"
 
 // TODO == 2
 @implementation LogInView
@@ -47,7 +48,7 @@
         //add smthng if wrong auth  TODO
         [self dismissViewControllerAnimated:YES completion:nil];
     }
-    
+    [(ViewController*)_baseDelegate afterAuth];
 }
 
 //returns us string between "start" and "end"

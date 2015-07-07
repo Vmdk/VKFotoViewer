@@ -9,9 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface LogInView : UIViewController <UIWebViewDelegate>
+@interface LogInView : UIViewController <UIWebViewDelegate> {
+}
 
 @property (strong, nonatomic) IBOutlet UIWebView *myBrowser;
+@property (strong, nonatomic) id baseDelegate;
 
 - (NSString*)stringBetweenString:(NSString*)start
                        andString:(NSString*)end
