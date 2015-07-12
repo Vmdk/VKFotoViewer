@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "LogInView.h"
 #import "FriendsListVC.h"
+#import "EERequest.h"
 
 
 @interface ViewController ()
@@ -36,28 +37,8 @@
 
 - (void)afterAuth {
     FriendsListVC *friendVC = [[FriendsListVC alloc] initWithNibName:@"FriendsListVC" bundle:nil];
-    [friendVC setTempArr];
-    //[friendVC setFriends:[self friendRequest]];
+    [friendVC setFriends:[EERequest friendRequest]];
     [self presentViewController:friendVC animated:YES completion:nil];
-}
-
-- (NSArray*)friendRequest {
-    NSString *us_id = [[NSUserDefaults standardUserDefaults] objectForKey:@"VKAccessUserId"];
-    //NSString *accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:@"VKAccesssToken"];
-    //NSString *stringReq = [NSString stringWithFormat:@"https://api.vk.com/method/friends.get?user_id=%@&order=hints&access_token=%@", us_id, accessToken];
-    NSString *stringReq = [NSString stringWithFormat:@"https://api.vk.com/method/friends.get?user_id=%@&order=hints", us_id];
-    //get data from string(request)
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:stringReq]
-                                                           cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
-                                                       timeoutInterval:60.0];
-    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-    
-    //here in log u can see, that token and user's id are correct
-    NSLog([[NSUserDefaults standardUserDefaults] objectForKey:@"VKAccessUserId"]);
-    NSLog([[NSUserDefaults standardUserDefaults] objectForKey:@"VKAccessToken"]);
-    NSDictionary *friendsId = [NSJSONSerialization JSONObjectWithData:responseData options:NSNotFound error:nil];
-    NSArray *idArray = friendsId[@"response"];
-    return idArray;
 }
 
 @end

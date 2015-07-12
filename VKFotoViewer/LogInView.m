@@ -8,6 +8,7 @@
 
 #import "LogInView.h"
 #import "ViewController.h"
+#import "EERequest.h"
 
 // TODO == 3
 @implementation LogInView

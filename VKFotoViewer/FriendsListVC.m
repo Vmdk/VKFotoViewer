@@ -7,11 +7,13 @@
 //
 
 #import "FriendsListVC.h"
+#import "EERequest.h"
 
 @interface FriendsListVC ()
 
 @end
 
+//TODO 1
 @implementation FriendsListVC {
     NSArray *_friendsId;
     NSMutableArray *_names;
@@ -44,43 +46,17 @@
     return lCell;
 }
 
-- (void)setTempArr {
-    _names = [NSMutableArray arrayWithObjects:@"10",@"11",@"12",@"13",@"14",@"15",@"16",@"17", nil];
-    [_friendsList reloadData];
-}
-
 -(void)setFriends:(NSArray *)arr {
     _friendsId = arr;
-    int limit = arr.count;
     _names = [NSMutableArray array];
-    for (int i = 0; i<limit; i++) {
-        _names[i] = [self getNameForId:arr[i]];
+    int limit = 15;
+    if (arr.count<15) {
+        limit = arr.count;
+    }
+    for (int i = 0; i<limit; ++i) {
+        _names[i] = [EERequest getNameForId:arr[i]];
     }
     [_friendsList reloadData];
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-- (NSString*)getNameForId:(NSString*)curId {
-    NSString *stringReq = [NSString stringWithFormat:@"https://api.vk.com/method/users.get?user_id=%@&order=hints", curId];
-    //get data from string(request)
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:stringReq]
-                                                           cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
-                                                       timeoutInterval:60.0];
-    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-    
-    NSDictionary* userInfo = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingAllowFragments error:nil];
-    NSString *name = userInfo[@"response"][0][@"first_name"];
-    NSString *lastName = userInfo[@"response"][0][@"last_name"];
-    return [NSString stringWithFormat:@"%@ %@",name,lastName];
 }
 
 @end

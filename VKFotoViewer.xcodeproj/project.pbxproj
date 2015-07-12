@@ -10,6 +10,7 @@
 		E1525C9A1B46FA51006FFE5F /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1525C991B46FA51006FFE5F /* ViewController.xib */; };
 		E167EFDA1B4BC61100B30DA9 /* FriendsListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E167EFD91B4BC61100B30DA9 /* FriendsListVC.m */; };
 		E167EFDC1B4BC63500B30DA9 /* FriendsListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E167EFDB1B4BC63500B30DA9 /* FriendsListVC.xib */; };
+		E1990C331B529D1C00722250 /* EERequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E1990C321B529D1C00722250 /* EERequest.m */; };
 		E1E2E7241B47075D005AD3EB /* LogInView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E2E7231B47075D005AD3EB /* LogInView.m */; };
 		E1E2E7261B47077B005AD3EB /* LogInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1E2E7251B47077B005AD3EB /* LogInView.xib */; };
 		E1EF3C7A1B46F9CC00D0259F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1EF3C791B46F9CC00D0259F /* main.m */; };
@@ -35,6 +36,8 @@
 		E167EFD81B4BC61100B30DA9 /* FriendsListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsListVC.h; sourceTree = "<group>"; };
 		E167EFD91B4BC61100B30DA9 /* FriendsListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsListVC.m; sourceTree = "<group>"; };
 		E167EFDB1B4BC63500B30DA9 /* FriendsListVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendsListVC.xib; sourceTree = "<group>"; };
+		E1990C311B529D1C00722250 /* EERequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EERequest.h; sourceTree = "<group>"; };
+		E1990C321B529D1C00722250 /* EERequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EERequest.m; sourceTree = "<group>"; };
 		E1E2E7221B47075D005AD3EB /* LogInView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInView.h; sourceTree = "<group>"; };
 		E1E2E7231B47075D005AD3EB /* LogInView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInView.m; sourceTree = "<group>"; };
 		E1E2E7251B47077B005AD3EB /* LogInView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogInView.xib; sourceTree = "<group>"; };
@@ -70,6 +73,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E1990C301B529CCD00722250 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				E1990C311B529D1C00722250 /* EERequest.h */,
+				E1990C321B529D1C00722250 /* EERequest.m */,
+			);
+			name = Logic;
+			sourceTree = "<group>";
+		};
 		E1EF3C6B1B46F9CC00D0259F = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +114,7 @@
 				E167EFD81B4BC61100B30DA9 /* FriendsListVC.h */,
 				E167EFD91B4BC61100B30DA9 /* FriendsListVC.m */,
 				E167EFDB1B4BC63500B30DA9 /* FriendsListVC.xib */,
+				E1990C301B529CCD00722250 /* Logic */,
 				E1EF3C841B46F9CC00D0259F /* Images.xcassets */,
 				E1EF3C861B46F9CC00D0259F /* LaunchScreen.xib */,
 				E1EF3C771B46F9CC00D0259F /* Supporting Files */,
@@ -240,6 +253,7 @@
 				E1EF3C801B46F9CC00D0259F /* ViewController.m in Sources */,
 				E1EF3C7D1B46F9CC00D0259F /* AppDelegate.m in Sources */,
 				E1E2E7241B47075D005AD3EB /* LogInView.m in Sources */,
+				E1990C331B529D1C00722250 /* EERequest.m in Sources */,
 				E1EF3C7A1B46F9CC00D0259F /* main.m in Sources */,
 				E167EFDA1B4BC61100B30DA9 /* FriendsListVC.m in Sources */,
 			);
