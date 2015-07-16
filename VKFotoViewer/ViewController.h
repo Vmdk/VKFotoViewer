@@ -11,7 +11,5 @@
 @interface ViewController : UIViewController {
     IBOutlet UIButton *_logInButton;
 }
-
-- (void)afterAuth;
 @end
 

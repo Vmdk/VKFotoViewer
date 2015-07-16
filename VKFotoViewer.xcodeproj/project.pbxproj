@@ -82,18 +82,42 @@
 			name = Logic;
 			sourceTree = "<group>";
 		};
-		E1A3FFA51B52CF5B00105E66 /* VC */ = {
+		E1A37D561B57F60F00933508 /* FriendList */ = {
+			isa = PBXGroup;
+			children = (
+				E167EFD81B4BC61100B30DA9 /* FriendsListVC.h */,
+				E167EFD91B4BC61100B30DA9 /* FriendsListVC.m */,
+				E167EFDB1B4BC63500B30DA9 /* FriendsListVC.xib */,
+			);
+			name = FriendList;
+			sourceTree = "<group>";
+		};
+		E1A37D571B57F66E00933508 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				E1E2E7221B47075D005AD3EB /* LogInView.h */,
+				E1E2E7231B47075D005AD3EB /* LogInView.m */,
+				E1E2E7251B47077B005AD3EB /* LogInView.xib */,
+			);
+			name = Authorization;
+			sourceTree = "<group>";
+		};
+		E1A37D581B57F69100933508 /* StartVC */ = {
 			isa = PBXGroup;
 			children = (
 				E1EF3C7E1B46F9CC00D0259F /* ViewController.h */,
 				E1EF3C7F1B46F9CC00D0259F /* ViewController.m */,
 				E1525C991B46FA51006FFE5F /* ViewController.xib */,
-				E1E2E7221B47075D005AD3EB /* LogInView.h */,
-				E1E2E7231B47075D005AD3EB /* LogInView.m */,
-				E1E2E7251B47077B005AD3EB /* LogInView.xib */,
-				E167EFD81B4BC61100B30DA9 /* FriendsListVC.h */,
-				E167EFD91B4BC61100B30DA9 /* FriendsListVC.m */,
-				E167EFDB1B4BC63500B30DA9 /* FriendsListVC.xib */,
+			);
+			name = StartVC;
+			sourceTree = "<group>";
+		};
+		E1A3FFA51B52CF5B00105E66 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				E1A37D581B57F69100933508 /* StartVC */,
+				E1A37D571B57F66E00933508 /* Authorization */,
+				E1A37D561B57F60F00933508 /* FriendList */,
 			);
 			name = VC;
 			sourceTree = "<group>";

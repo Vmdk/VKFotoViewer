@@ -12,7 +12,7 @@
 #import "EERequest.h"
 
 
-@interface ViewController ()
+@interface ViewController () <LogInViewDelegate>
 
 @end
 
@@ -29,16 +29,24 @@
 }
 
 - (IBAction)logInClick:(id)sender {
-    LogInView *logVC = [[LogInView alloc] initWithNibName:@"LogInView" bundle:nil];
+    LogInView *logVC = [[LogInView alloc] init];
     logVC.baseDelegate = self;
-    //[self presentViewController:logVC animated:YES completion:nil];
-    [self presentViewController:logVC animated:YES completion:nil];
+    [self.navigationController pushViewController:logVC animated:YES];
 }
 
-- (void)afterAuth {
-    FriendsListVC *friendVC = [[FriendsListVC alloc] initWithNibName:@"FriendsListVC" bundle:nil];
-    [friendVC setFriends:[EERequest friendRequest]];
-    [self presentViewController:friendVC animated:YES completion:nil];
+#pragma mark - Login delegates
+
+- (void)LogInViewDelegateLoginState:(BOOL)state {
+    if (state) {
+        FriendsListVC *friendVC = [[FriendsListVC alloc] init];
+       
+        [self.navigationController pushViewController:friendVC animated:YES];
+    } else {
+        
+        UIAlertView *lAlertView = [[UIAlertView alloc] initWithTitle:@"something wrong!" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        
+        [lAlertView show];
+    }
 }
 
 @end

@@ -17,21 +17,19 @@
 {
     [super viewDidLoad];
     //cleaning catche. Should be removed smwhr TODO
-    [[NSURLCache sharedURLCache] removeAllCachedResponses];
+    //[[NSURLCache sharedURLCache] removeAllCachedResponses];
     NSURL *lURL = [NSURL URLWithString:@"https://oauth.vk.com/authorize?client_id=4982333&scope=6&redirect_uri=https://oauth.vk.com/blank.html&display=mobile&v=5.34&response_type=token"];
     [_myBrowser loadRequest:[NSURLRequest requestWithURL:lURL]];
 }
-
-
--(void)webViewDidFinishLoad:(UIWebView *)webView {
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     // get token
-    if ([_myBrowser.request.URL.absoluteString rangeOfString:@"access_token"].location != NSNotFound) {
+    if ([request.URL.absoluteString rangeOfString:@"access_token"].location != NSNotFound) {
         NSString *accessToken = [self stringBetweenString:@"access_token="
                                                 andString:@"&"
-                                              innerString:[[[webView request] URL] absoluteString]];
+                                              innerString:[[request URL] absoluteString]];
         
         // get user's id
-        NSArray *userAr = [[[[webView request] URL] absoluteString] componentsSeparatedByString:@"&user_id="];
+        NSArray *userAr = [[[request URL] absoluteString] componentsSeparatedByString:@"&user_id="];
         NSString *user_id = [userAr lastObject];
         //save user's id
         if(user_id){
@@ -45,11 +43,22 @@
             //later add syncro, cheking token's time etc..   TODO
             [[NSUserDefaults standardUserDefaults] synchronize];
         }
-        [self dismissViewControllerAnimated:YES completion:nil];
-        [(ViewController*)_baseDelegate afterAuth];
-    } else if ([_myBrowser.request.URL.absoluteString rangeOfString:@"error"].location != NSNotFound) {
+        [self dismissViewControllerAnimated:YES completion:^{
+            [self loginState:YES];
+        }];
+        
+    } else if ([request.URL.absoluteString rangeOfString:@"error"].location != NSNotFound) {
         //add smthng if wrong auth  TODO
-        [self dismissViewControllerAnimated:YES completion:nil];
+        [self dismissViewControllerAnimated:YES completion:^{
+            [self loginState:NO];
+        }];
+    }
+    return YES;
+}
+
+- (void)loginState:(BOOL)state {
+    if (_baseDelegate && [_baseDelegate respondsToSelector:@selector(LogInViewDelegateLoginState:)]) {
+        [_baseDelegate LogInViewDelegateLoginState:YES];
     }
 }
 

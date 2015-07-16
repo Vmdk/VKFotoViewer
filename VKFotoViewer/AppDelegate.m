@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "FriendsListVC.h"
+
 @interface AppDelegate ()
 
 @end
@@ -18,11 +20,21 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    NSString *lAccessToken = [[NSUserDefaults standardUserDefaults] objectForKey:@"VKAccessToken"];
     _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    ViewController* vc = [ViewController new];
-    UINavigationController* NavCont = [[UINavigationController alloc] initWithRootViewController:vc];
-    _window.rootViewController = NavCont;
+    
+    if (lAccessToken && ![lAccessToken isEqualToString:@""]) {
+        FriendsListVC* vc = [FriendsListVC new];
+        UINavigationController* NavCont = [[UINavigationController alloc] initWithRootViewController:vc];
+        _window.rootViewController = NavCont;
+    } else {
+        ViewController* vc = [ViewController new];
+        UINavigationController* NavCont = [[UINavigationController alloc] initWithRootViewController:vc];
+        _window.rootViewController = NavCont;
+    }
     [_window makeKeyAndVisible];
+    
+   
     
     return YES;
 }
