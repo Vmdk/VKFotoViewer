@@ -28,7 +28,7 @@
 }
 
 + (NSString*)getNameForId:(NSString*)curId {
-    NSString *stringReq = [NSString stringWithFormat:@"https://api.vk.com/method/users.get?user_id=%@&order=hints", curId];
+    NSString *stringReq = [NSString stringWithFormat:@"https://api.vk.com/method/users.get?user_id=%@", curId];
     //get data from string(request)
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:stringReq]
                                                            cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
@@ -40,6 +40,25 @@
     NSString *lastName = userInfo[@"response"][0][@"last_name"];
     NSString *res = [NSString stringWithFormat:@"%@ %@",name,lastName];
     return res;
+}
+
++ (NSData *)getIdInfo:(NSString *)curId {
+    NSString* stringReq = [NSString stringWithFormat:@"https://api.vk.com/method/users.get?user_id=%@&fields=sex,bdate,city,photo_200", curId];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:stringReq]
+                                                           cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
+                                                       timeoutInterval:60.0];
+    return [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+}
+
++ (NSString*)getCity:(NSString *)cId {
+    NSString* strReq = [NSString stringWithFormat:@"https://api.vk.com/method/database.getCitiesById?city_ids=%@", cId];
+    NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:strReq]
+                                                       cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:60.0];
+    NSData *response = [NSURLConnection sendSynchronousRequest:req returningResponse:nil error:nil];
+    NSDictionary* lData = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingAllowFragments error:nil];
+    NSDictionary* ll = lData[@"response"][0];
+    
+    return @"avc";
 }
 
 @end

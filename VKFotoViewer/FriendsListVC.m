@@ -8,6 +8,7 @@
 
 #import "FriendsListVC.h"
 #import "EERequest.h"
+#import "EEFriendInfoVC.h"
 
 @interface FriendsListVC ()
 
@@ -41,10 +42,18 @@
     UITableViewCell *lCell = [tableView dequeueReusableCellWithIdentifier:@"identifier"];
     if (lCell == nil) {
         lCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"identifier"];
+        lCell.accessoryType = UITableViewCellAccessoryDetailButton;
     }
     
     lCell.textLabel.text = [_names objectAtIndex:indexPath.row];
     return lCell;
+}
+
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+    EEFriendInfoVC *vc = [[EEFriendInfoVC alloc] init];
+    [vc setId:_friendsId[indexPath.row]];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 -(void)setFriends:(NSArray *)arr {

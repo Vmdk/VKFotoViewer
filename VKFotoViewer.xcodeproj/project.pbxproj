@@ -13,12 +13,15 @@
 		E1990C331B529D1C00722250 /* EERequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E1990C321B529D1C00722250 /* EERequest.m */; };
 		E1E2E7241B47075D005AD3EB /* LogInView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E2E7231B47075D005AD3EB /* LogInView.m */; };
 		E1E2E7261B47077B005AD3EB /* LogInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1E2E7251B47077B005AD3EB /* LogInView.xib */; };
+		E1E362591B5AB34100DBF8C8 /* EEFriendInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E362581B5AB34100DBF8C8 /* EEFriendInfoVC.m */; };
+		E1E3625B1B5AB36100DBF8C8 /* EEFriendInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1E3625A1B5AB36100DBF8C8 /* EEFriendInfoVC.xib */; };
 		E1EF3C7A1B46F9CC00D0259F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1EF3C791B46F9CC00D0259F /* main.m */; };
 		E1EF3C7D1B46F9CC00D0259F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1EF3C7C1B46F9CC00D0259F /* AppDelegate.m */; };
 		E1EF3C801B46F9CC00D0259F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1EF3C7F1B46F9CC00D0259F /* ViewController.m */; };
 		E1EF3C851B46F9CC00D0259F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1EF3C841B46F9CC00D0259F /* Images.xcassets */; };
 		E1EF3C881B46F9CC00D0259F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1EF3C861B46F9CC00D0259F /* LaunchScreen.xib */; };
 		E1EF3C941B46F9CC00D0259F /* VKFotoViewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E1EF3C931B46F9CC00D0259F /* VKFotoViewerTests.m */; };
+		E1F8A5BD1B5E59610007FA97 /* EELogic.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F8A5BC1B5E59610007FA97 /* EELogic.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +44,9 @@
 		E1E2E7221B47075D005AD3EB /* LogInView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInView.h; sourceTree = "<group>"; };
 		E1E2E7231B47075D005AD3EB /* LogInView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInView.m; sourceTree = "<group>"; };
 		E1E2E7251B47077B005AD3EB /* LogInView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogInView.xib; sourceTree = "<group>"; };
+		E1E362571B5AB34100DBF8C8 /* EEFriendInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EEFriendInfoVC.h; sourceTree = "<group>"; };
+		E1E362581B5AB34100DBF8C8 /* EEFriendInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EEFriendInfoVC.m; sourceTree = "<group>"; };
+		E1E3625A1B5AB36100DBF8C8 /* EEFriendInfoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EEFriendInfoVC.xib; sourceTree = "<group>"; };
 		E1EF3C741B46F9CC00D0259F /* VKFotoViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKFotoViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1EF3C781B46F9CC00D0259F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1EF3C791B46F9CC00D0259F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -53,6 +59,8 @@
 		E1EF3C8D1B46F9CC00D0259F /* VKFotoViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VKFotoViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1EF3C921B46F9CC00D0259F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1EF3C931B46F9CC00D0259F /* VKFotoViewerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VKFotoViewerTests.m; sourceTree = "<group>"; };
+		E1F8A5BB1B5E59610007FA97 /* EELogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EELogic.h; sourceTree = "<group>"; };
+		E1F8A5BC1B5E59610007FA97 /* EELogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EELogic.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +86,8 @@
 			children = (
 				E1990C311B529D1C00722250 /* EERequest.h */,
 				E1990C321B529D1C00722250 /* EERequest.m */,
+				E1F8A5BB1B5E59610007FA97 /* EELogic.h */,
+				E1F8A5BC1B5E59610007FA97 /* EELogic.m */,
 			);
 			name = Logic;
 			sourceTree = "<group>";
@@ -118,8 +128,19 @@
 				E1A37D581B57F69100933508 /* StartVC */,
 				E1A37D571B57F66E00933508 /* Authorization */,
 				E1A37D561B57F60F00933508 /* FriendList */,
+				E1E362561B5AB31400DBF8C8 /* FriendInfo */,
 			);
 			name = VC;
+			sourceTree = "<group>";
+		};
+		E1E362561B5AB31400DBF8C8 /* FriendInfo */ = {
+			isa = PBXGroup;
+			children = (
+				E1E362571B5AB34100DBF8C8 /* EEFriendInfoVC.h */,
+				E1E362581B5AB34100DBF8C8 /* EEFriendInfoVC.m */,
+				E1E3625A1B5AB36100DBF8C8 /* EEFriendInfoVC.xib */,
+			);
+			name = FriendInfo;
 			sourceTree = "<group>";
 		};
 		E1EF3C6B1B46F9CC00D0259F = {
@@ -262,6 +283,7 @@
 			files = (
 				E1EF3C881B46F9CC00D0259F /* LaunchScreen.xib in Resources */,
 				E1525C9A1B46FA51006FFE5F /* ViewController.xib in Resources */,
+				E1E3625B1B5AB36100DBF8C8 /* EEFriendInfoVC.xib in Resources */,
 				E1E2E7261B47077B005AD3EB /* LogInView.xib in Resources */,
 				E1EF3C851B46F9CC00D0259F /* Images.xcassets in Resources */,
 				E167EFDC1B4BC63500B30DA9 /* FriendsListVC.xib in Resources */,
@@ -286,6 +308,8 @@
 				E1EF3C7D1B46F9CC00D0259F /* AppDelegate.m in Sources */,
 				E1E2E7241B47075D005AD3EB /* LogInView.m in Sources */,
 				E1990C331B529D1C00722250 /* EERequest.m in Sources */,
+				E1F8A5BD1B5E59610007FA97 /* EELogic.m in Sources */,
+				E1E362591B5AB34100DBF8C8 /* EEFriendInfoVC.m in Sources */,
 				E1EF3C7A1B46F9CC00D0259F /* main.m in Sources */,
 				E167EFDA1B4BC61100B30DA9 /* FriendsListVC.m in Sources */,
 			);

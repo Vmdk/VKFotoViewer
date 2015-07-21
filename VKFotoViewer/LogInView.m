@@ -58,7 +58,7 @@
 
 - (void)loginState:(BOOL)state {
     if (_baseDelegate && [_baseDelegate respondsToSelector:@selector(LogInViewDelegateLoginState:)]) {
-        [_baseDelegate LogInViewDelegateLoginState:YES];
+        [_baseDelegate LogInViewDelegateLoginState:state];
     }
 }
 
@@ -81,5 +81,3 @@
 
 
 @end
-
-//https://oauth.vk.com/authorize?client_id=4982333&scope=6&redirect_uri=https://oauth.vk.com/blank.html&display=mobile&v=5.34&response_type=token

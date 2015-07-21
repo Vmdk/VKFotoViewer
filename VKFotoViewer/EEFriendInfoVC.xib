@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EEFriendInfoVC">
+            <connections>
+                <outlet property="_name" destination="edh-fr-t7F" id="aYe-GZ-Xjh"/>
+                <outlet property="_photo" destination="zzv-mt-MT3" id="5yz-sA-Cf8"/>
+                <outlet property="_shortInfo" destination="SIT-Fo-gLP" id="7rh-kz-CT7"/>
+                <outlet property="view" destination="iN0-l3-epB" id="DFB-lk-oUg"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zzv-mt-MT3">
+                    <rect key="frame" x="40" y="30" width="200" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="QYi-Fq-FVE"/>
+                        <constraint firstAttribute="width" constant="200" id="taf-h9-R2Q"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Short Info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SIT-Fo-gLP">
+                    <rect key="frame" x="314" y="146" width="134" height="38"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FirstName LastName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edh-fr-t7F">
+                    <rect key="frame" x="283" y="58" width="196" height="51"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="zzv-mt-MT3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="MLb-38-Pry"/>
+                <constraint firstItem="zzv-mt-MT3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="40" id="vlA-8i-O9B"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
