@@ -18,6 +18,8 @@
 @implementation FriendsListVC {
     NSArray *_friendsId;
     NSMutableArray *_names;
+    int _rows;
+    BOOL _all;
 }
 
 - (void)viewDidLoad {
@@ -35,10 +37,16 @@
     if (_names.count<15) {
         return _names.count;
     }
-    return 15;
+    if(!_rows) {
+        _rows = 15;
+    }
+    return _rows;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(indexPath.row == _rows) {
+        
+    }
     UITableViewCell *lCell = [tableView dequeueReusableCellWithIdentifier:@"identifier"];
     if (lCell == nil) {
         lCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"identifier"];
@@ -56,16 +64,46 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row==_rows - 1) {
+        NSLog(@"indexPath = %d",indexPath.row);
+        [self uploadFriends];
+    }
+}
+
+
+- (void)uploadFriends {
+    if(_rows+15>_friendsId.count) {
+        for (int i = _rows; i<_friendsId.count; ++i) {
+            _names[i] = [EERequest getNameForId:_friendsId[i]];
+        }
+        _rows = _friendsId.count;
+        _all = true;
+    }
+    else {
+        for (int i = _rows; i<_rows+15; ++i) {
+            _names[i] = [EERequest getNameForId:_friendsId[i]];
+        }
+        _all = false;
+        _rows+=15;
+    }
+    [_friendsList reloadData];
+}
+
+
 -(void)setFriends:(NSArray *)arr {
     _friendsId = arr;
     _names = [NSMutableArray array];
     int limit = 15;
     if (arr.count<15) {
         limit = arr.count;
+        _all = true;
     }
     for (int i = 0; i<limit; ++i) {
         _names[i] = [EERequest getNameForId:arr[i]];
     }
+    _all = false;
     [_friendsList reloadData];
 }
 

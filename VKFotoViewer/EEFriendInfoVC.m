@@ -24,11 +24,27 @@
     NSDictionary *lInfo = larr[@"response"][0];
     
     _name.text = [NSString stringWithFormat:@"%@ %@",lInfo[@"first_name"],lInfo[@"last_name"]];
-    NSString* lAge = [EELogic getAge:lInfo[@"age"]];
-    _shortInfo.text = [NSString stringWithFormat:@"%@ years old, %@",lAge,lInfo[@"last_name"]];
+    NSString* lAge = [EELogic getAge:lInfo[@"bdate"]];
+    NSString* lCity = [EERequest getCity:lInfo[@"city"]];
+    _shortInfo.text = [NSString stringWithFormat:@"%@%@",lAge, lCity];
 }
 
 - (void)setId:(NSString *)ind {
     _id = ind;
+}
+
+#pragma mark - Table realization
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 4;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *lCell = [tableView dequeueReusableCellWithIdentifier:@"identifier"];
+    if (lCell == nil) {
+        lCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"identifier"];
+        lCell.accessoryType = UITableViewCellAccessoryDetailButton;
+    }
+    return lCell;
 }
 @end

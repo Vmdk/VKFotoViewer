@@ -10,4 +10,29 @@
 
 @implementation EELogic
 
+
++ (NSString *)getAge:(NSString *)bDate {
+    NSDateFormatter *formerWithYear = [[NSDateFormatter alloc] init];
+    [formerWithYear setDateFormat:@"dd.MM.YYYY"];
+    
+    NSDate *date = [formerWithYear dateFromString:bDate];
+    if (date) {
+        int age = [self countAge:date];
+        NSString *res = [NSString stringWithFormat:@"%i years old, ", age ];
+        return res;
+    }
+    else {
+        return @"";
+    }
+}
+
++ (int)countAge:(NSDate*)bdate {
+    NSDateComponents *ageComponents = [[NSCalendar currentCalendar]
+                                       components:NSCalendarUnitYear
+                                       fromDate:bdate
+                                       toDate:[NSDate date]
+                                       options:0];
+    return ageComponents.year;
+}
+
 @end

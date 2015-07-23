@@ -50,15 +50,21 @@
     return [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
 }
 
-+ (NSString*)getCity:(NSString *)cId {
-    NSString* strReq = [NSString stringWithFormat:@"https://api.vk.com/method/database.getCitiesById?city_ids=%@", cId];
-    NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:strReq]
-                                                       cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:60.0];
-    NSData *response = [NSURLConnection sendSynchronousRequest:req returningResponse:nil error:nil];
-    NSDictionary* lData = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingAllowFragments error:nil];
-    NSDictionary* ll = lData[@"response"][0];
-    
-    return @"avc";
++ (NSString*)getCity:(NSString*)cId {
+    if (![[NSString stringWithFormat:@"%@", cId ]  isEqual: @"0"]) {
+        NSString* strReq = [NSString stringWithFormat:@"https://api.vk.com/method/database.getCitiesById?city_ids=%@", cId];
+        NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:strReq]
+                                                           cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:60.0];
+        NSData *response = [NSURLConnection sendSynchronousRequest:req returningResponse:nil error:nil];
+        NSDictionary* lData = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingAllowFragments error:nil];
+        NSDictionary* ll = lData[@"response"][0];
+        NSString *res = ll[@"name"];
+        return res;
+    }
+    else {
+        return @"";
+    }
 }
+//AF Networking
 
 @end

@@ -9,10 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface EEFriendInfoVC : UIViewController {
+@interface EEFriendInfoVC : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     IBOutlet UIImageView *_photo;
     IBOutlet UILabel *_name;
     IBOutlet UILabel *_shortInfo;
+    IBOutlet UITableView *_TableWithInfo;
 }
 
 - (void) setId:(NSString*)ind;
