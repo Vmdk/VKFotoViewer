@@ -14,4 +14,5 @@
 + (NSString*)getNameForId:(NSString*)curId;
 + (NSData*)getIdInfo:(NSString*)curId;
 + (NSString*)getCity:(NSString*)cId;
++ (NSString*)AFgetCity:(NSString*)cId;
 @end

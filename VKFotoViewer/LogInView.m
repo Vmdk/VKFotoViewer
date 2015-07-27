@@ -10,7 +10,7 @@
 #import "ViewController.h"
 #import "EERequest.h"
 
-// TODO == 3
+// TODO == 2
 @implementation LogInView
 
 - (void)viewDidLoad
@@ -48,7 +48,6 @@
         }];
         
     } else if ([request.URL.absoluteString rangeOfString:@"error"].location != NSNotFound) {
-        //add smthng if wrong auth  TODO
         [self dismissViewControllerAnimated:YES completion:^{
             [self loginState:NO];
         }];

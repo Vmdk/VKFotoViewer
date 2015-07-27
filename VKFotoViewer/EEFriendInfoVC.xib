@@ -26,7 +26,7 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Short Info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SIT-Fo-gLP">
-                    <rect key="frame" x="220" y="56" width="380" height="21"/>
+                    <rect key="frame" x="220" y="56" width="375" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
@@ -55,10 +55,10 @@
                 <constraint firstItem="zzv-mt-MT3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="QBb-Ze-40Z"/>
                 <constraint firstItem="zzv-mt-MT3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="Tjy-pR-7Bs"/>
                 <constraint firstItem="pqA-Ku-3Eo" firstAttribute="top" secondItem="zzv-mt-MT3" secondAttribute="bottom" constant="10" id="YdX-S4-VUl"/>
+                <constraint firstAttribute="trailing" secondItem="SIT-Fo-gLP" secondAttribute="trailing" constant="5" id="cTe-nB-1Z0"/>
                 <constraint firstAttribute="bottom" secondItem="pqA-Ku-3Eo" secondAttribute="bottom" id="j6b-WV-eEN"/>
                 <constraint firstItem="SIT-Fo-gLP" firstAttribute="leading" secondItem="zzv-mt-MT3" secondAttribute="trailing" constant="10" id="qk2-2l-3N1"/>
                 <constraint firstAttribute="trailing" secondItem="pqA-Ku-3Eo" secondAttribute="trailing" id="r6S-HD-uJ0"/>
-                <constraint firstAttribute="trailing" secondItem="SIT-Fo-gLP" secondAttribute="trailing" id="whO-nh-srt"/>
                 <constraint firstItem="edh-fr-t7F" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="yFW-hu-jq4"/>
             </constraints>
             <point key="canvasLocation" x="167" y="259"/>

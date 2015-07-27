@@ -24,6 +24,7 @@
     NSDictionary *lInfo = larr[@"response"][0];
     
     _name.text = [NSString stringWithFormat:@"%@ %@",lInfo[@"first_name"],lInfo[@"last_name"]];
+    [self initPhoto:lInfo[@"photo_200"]];
     NSString* lAge = [EELogic getAge:lInfo[@"bdate"]];
     NSString* lCity = [EERequest getCity:lInfo[@"city"]];
     _shortInfo.text = [NSString stringWithFormat:@"%@%@",lAge, lCity];
@@ -31,6 +32,10 @@
 
 - (void)setId:(NSString *)ind {
     _id = ind;
+}
+- (void)initPhoto:(NSString*)photoURL {
+    NSData *data =[[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:photoURL]];
+    _photo.image = [UIImage imageWithData:data];
 }
 
 #pragma mark - Table realization

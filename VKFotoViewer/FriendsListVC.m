@@ -57,7 +57,6 @@
     return lCell;
 }
 
-
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
     EEFriendInfoVC *vc = [[EEFriendInfoVC alloc] init];
     [vc setId:_friendsId[indexPath.row]];
@@ -66,12 +65,10 @@
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row==_rows - 1) {
-        NSLog(@"indexPath = %d",indexPath.row);
+    if (indexPath.row==_rows - 1 && !_all) {
         [self uploadFriends];
     }
 }
-
 
 - (void)uploadFriends {
     if(_rows+15>_friendsId.count) {
@@ -90,7 +87,6 @@
     }
     [_friendsList reloadData];
 }
-
 
 -(void)setFriends:(NSArray *)arr {
     _friendsId = arr;

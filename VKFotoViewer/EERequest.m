@@ -7,6 +7,7 @@
 //
 
 #import "EERequest.h"
+#import "AFNetworking.h"
 
 @implementation EERequest
 
@@ -65,6 +66,32 @@
         return @"";
     }
 }
-//AF Networking
+
++ (NSString*)AFgetCity:(NSString*)cId {
+    if (![[NSString stringWithFormat:@"%@", cId ]  isEqual: @"0"]) {
+        NSString* const strReq = [NSString stringWithFormat:@"https://api.vk.com/method/database.getCitiesById?city_ids=%@", cId];
+        NSURLRequest* req = [NSURLRequest requestWithURL:[NSURL URLWithString:strReq]];
+        
+        AFHTTPRequestOperation * operation = [[AFHTTPRequestOperation alloc] initWithRequest:req];
+        operation.responseSerializer = [AFJSONResponseSerializer serializer];
+        [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+            NSDictionary *result = (NSDictionary*)responseObject;
+            //cheking...
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Some Error"
+                                                                message:[error localizedDescription]
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"Ok"
+                                                      otherButtonTitles:nil];
+            [alertView show];
+            return nil;
+        }];
+        [operation start];
+        return @"";
+    }
+    else {
+        return @"";
+    }
+}
 
 @end

@@ -39,12 +39,9 @@
 - (void)LogInViewDelegateLoginState:(BOOL)state {
     if (state) {
         FriendsListVC *friendVC = [[FriendsListVC alloc] init];
-       
         [self.navigationController pushViewController:friendVC animated:YES];
     } else {
-        
         UIAlertView *lAlertView = [[UIAlertView alloc] initWithTitle:@"something wrong!" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        
         [lAlertView show];
     }
 }
