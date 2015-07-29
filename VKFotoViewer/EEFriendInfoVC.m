@@ -15,8 +15,12 @@
 }
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
+    
     NSData *lInfo = [EERequest getIdInfo:_id];
     [self fillInfo:lInfo];
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 - (void)fillInfo:(NSData*)info {
@@ -26,7 +30,7 @@
     _name.text = [NSString stringWithFormat:@"%@ %@",lInfo[@"first_name"],lInfo[@"last_name"]];
     [self initPhoto:lInfo[@"photo_200"]];
     NSString* lAge = [EELogic getAge:lInfo[@"bdate"]];
-    NSString* lCity = [EERequest getCity:lInfo[@"city"]];
+    NSString* lCity = [EERequest AFgetCity:lInfo[@"city"]];
     _shortInfo.text = [NSString stringWithFormat:@"%@%@",lAge, lCity];
 }
 

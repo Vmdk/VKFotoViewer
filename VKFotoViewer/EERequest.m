@@ -68,30 +68,41 @@
 }
 
 + (NSString*)AFgetCity:(NSString*)cId {
+    NSString __block *res = @"";
     if (![[NSString stringWithFormat:@"%@", cId ]  isEqual: @"0"]) {
         NSString* const strReq = [NSString stringWithFormat:@"https://api.vk.com/method/database.getCitiesById?city_ids=%@", cId];
-        NSURLRequest* req = [NSURLRequest requestWithURL:[NSURL URLWithString:strReq]];
-        
+        /*NSURLRequest* req = [NSURLRequest requestWithURL:[NSURL URLWithString:strReq]];
         AFHTTPRequestOperation * operation = [[AFHTTPRequestOperation alloc] initWithRequest:req];
         operation.responseSerializer = [AFJSONResponseSerializer serializer];
         [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSDictionary *result = (NSDictionary*)responseObject;
-            //cheking...
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Some Error"
-                                                                message:[error localizedDescription]
-                                                               delegate:nil
-                                                      cancelButtonTitle:@"Ok"
-                                                      otherButtonTitles:nil];
-            [alertView show];
-            return nil;
-        }];
-        [operation start];
-        return @"";
+            res = result[@"response"][0][@"name"];
+        } failure:nil];
+        [operation start];*/
+        
+        /*AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        [manager POST:strReq parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            res = (NSDictionary*)responseObject[@"response"][0][@"name"];
+        } failure:nil];
+        */
+        NSURL *URL = [NSURL URLWithString:strReq];
+        
+        // Initialize Session Configuration
+        NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        
+        // Initialize Session Manager
+        AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:sessionConfiguration];
+        
+        // Configure Manager
+        [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
+        
+        // Send Request
+        NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+        [[manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+            res = (NSDictionary*)responseObject[@"response"][0][@"name"];
+        }] resume];
     }
-    else {
-        return @"";
-    }
+    return res;
 }
 
 @end
