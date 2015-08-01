@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "VKFotoViewer/EEFriendInfoVC.m"
-            timestampString = "459877485.551593"
+            filePath = "VKFotoViewer/Logic/Processor/EEProcessor.m"
+            timestampString = "460144997.126487"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "-fillInfo:"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "+friendId:fillInfo:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "VKFotoViewer/EERequest.m"
-            timestampString = "459879339.275967"
+            filePath = "VKFotoViewer/Logic/Requests/EERequest.m"
+            timestampString = "460145052.039012"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "+AFgetCity:"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "+getIdInfo:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -8,6 +8,7 @@
 
 #import "EERequest.h"
 #import "AFNetworking.h"
+#import "EEInfo.h"
 
 @implementation EERequest
 
@@ -44,7 +45,9 @@
 }
 
 + (NSData *)getIdInfo:(NSString *)curId {
-    NSString* stringReq = [NSString stringWithFormat:@"https://api.vk.com/method/users.get?user_id=%@&fields=sex,bdate,city,photo_200", curId];
+    NSString* fields = [NSString stringWithFormat:@"sex,bdate,city,country,photo_200,contacts,music,movies,universities,schools,status,counters,connections"];
+    NSString *accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:@"VKAccessToken"];
+    NSString* stringReq = [NSString stringWithFormat:@"https://api.vk.com/method/users.get?user_id=%@&fields=%@&access_token=%@", curId, fields, accessToken];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:stringReq]
                                                            cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
                                                        timeoutInterval:60.0];
@@ -67,42 +70,25 @@
     }
 }
 
-+ (NSString*)AFgetCity:(NSString*)cId {
++ (void)AFgetCity:(NSString*)cId andFillInfo:(void (^)(NSString*))fillInfo {
     NSString __block *res = @"";
-    if (![[NSString stringWithFormat:@"%@", cId ]  isEqual: @"0"]) {
+    if (cId && ![[NSString stringWithFormat:@"%@", cId ]  isEqual: @"0"]) {
         NSString* const strReq = [NSString stringWithFormat:@"https://api.vk.com/method/database.getCitiesById?city_ids=%@", cId];
-        /*NSURLRequest* req = [NSURLRequest requestWithURL:[NSURL URLWithString:strReq]];
-        AFHTTPRequestOperation * operation = [[AFHTTPRequestOperation alloc] initWithRequest:req];
-        operation.responseSerializer = [AFJSONResponseSerializer serializer];
-        [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-            NSDictionary *result = (NSDictionary*)responseObject;
-            res = result[@"response"][0][@"name"];
-        } failure:nil];
-        [operation start];*/
-        
-        /*AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-        [manager POST:strReq parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            res = (NSDictionary*)responseObject[@"response"][0][@"name"];
-        } failure:nil];
-        */
         NSURL *URL = [NSURL URLWithString:strReq];
-        
-        // Initialize Session Configuration
         NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
-        
-        // Initialize Session Manager
         AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:sessionConfiguration];
-        
-        // Configure Manager
         [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
-        
         // Send Request
         NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-        [[manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
-            res = (NSDictionary*)responseObject[@"response"][0][@"name"];
-        }] resume];
+        NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+            res = responseObject[@"response"][0][@"name"];
+            fillInfo(res);
+        }];
+        [dataTask resume];
     }
-    return res;
+    else {
+        fillInfo(@"");
+    }
 }
 
 @end

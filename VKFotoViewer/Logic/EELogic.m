@@ -32,7 +32,7 @@
                                        fromDate:bdate
                                        toDate:[NSDate date]
                                        options:0];
-    return ageComponents.year;
+    return (int)ageComponents.year;
 }
 
 @end

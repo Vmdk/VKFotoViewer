@@ -10,4 +10,6 @@
 
 @interface EEInfo : NSObject
 
+@property(weak) NSString* baseURL;
+
 @end

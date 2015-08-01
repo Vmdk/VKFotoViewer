@@ -75,7 +75,7 @@
         for (int i = _rows; i<_friendsId.count; ++i) {
             _names[i] = [EERequest getNameForId:_friendsId[i]];
         }
-        _rows = _friendsId.count;
+        _rows = (int)_friendsId.count;
         _all = true;
     }
     else {
@@ -93,7 +93,7 @@
     _names = [NSMutableArray array];
     int limit = 15;
     if (arr.count<15) {
-        limit = arr.count;
+        limit = (int)arr.count;
         _all = true;
     }
     for (int i = 0; i<limit; ++i) {

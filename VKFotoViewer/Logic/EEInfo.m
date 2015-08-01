@@ -10,4 +10,11 @@
 
 @implementation EEInfo
 
+//- (NSString*)baseURL {
+//    if (!_baseURL) {
+//        return @"https://api.vk.com/method/";
+//    }
+//    return _baseURL;
+//}
+
 @end
