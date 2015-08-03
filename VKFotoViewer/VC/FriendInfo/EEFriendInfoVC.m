@@ -13,6 +13,7 @@
 
 @implementation EEFriendInfoVC {
     NSString *_id;
+    NSDictionary* _tableData;
 }
 
 - (void)viewDidLoad {
@@ -22,6 +23,8 @@
         [self initPhoto:info[@"photo"]];
         _name.text = info[@"name"];
         _shortInfo.text = info[@"short_info"];
+        _tableData = info[@"table_info"];
+        [_TableWithInfo reloadData];
     }];
     self.automaticallyAdjustsScrollViewInsets = NO;
 }
@@ -38,15 +41,36 @@
 #pragma mark - Table realization
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    if (!_tableData) {
+        return 0;
+    }
+    else {
+        NSArray *keys = [_tableData allKeys];
+        NSString *curentKey = [keys objectAtIndex:section];
+        NSArray *curentInfo = [_tableData objectForKey:curentKey];
+        return curentInfo.count;
+    }
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    if (!_tableData) {
+        return 0;
+    }
+    else
+        return _tableData.count;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return [[_tableData allKeys] objectAtIndex:section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *lCell = [tableView dequeueReusableCellWithIdentifier:@"identifier"];
     if (lCell == nil) {
         lCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"identifier"];
-        lCell.accessoryType = UITableViewCellAccessoryDetailButton;
     }
+    NSArray *curentInfo = [_tableData objectForKey:[[_tableData allKeys] objectAtIndex:indexPath.section]];
+    lCell.textLabel.text = [curentInfo objectAtIndex:indexPath.row];
     return lCell;
 }
 @end
