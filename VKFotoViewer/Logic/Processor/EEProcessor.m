@@ -12,9 +12,16 @@
 @implementation EEProcessor
 
 + (void)friendId:(NSString *)fId fillInfo:(void (^)(NSDictionary*))fillOrder {
-    NSData *response = [EERequest getIdInfo:fId];
-    NSDictionary* lInfo = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingAllowFragments error:nil][@"response"][0];
-    NSLog(@"avc");
+    [EERequest getIdInfo:fId successBlock:^(NSDictionary* lInfo){
+        //have user's info. Now just take what we need
+        NSMutableDictionary* result = [NSMutableDictionary dictionary];
+        [result setValue:[NSString stringWithFormat:@"%@ %@", lInfo[@"first_name"], lInfo[@"last_name"]] forKey:@"name"];
+        [result setValue:lInfo[@"photo_200"] forKey:@"photo"];
+        
+        
+        
+        fillOrder(result);
+    }];
 }
 
 @end

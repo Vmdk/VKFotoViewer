@@ -12,8 +12,8 @@
 
 + (NSArray*)friendRequest;
 + (NSString*)getNameForId:(NSString*)curId;
-+ (NSData*)getIdInfo:(NSString*)curId;
-+ (NSString*)getCity:(NSString*)cId;
-+ (void)AFgetCity:(NSString*)cId
-           andFillInfo:(void (^)(NSString*))fillInfo;
++ (void)getIdInfo:(NSString*)curId
+            successBlock:(void (^)(NSDictionary*))createInfo;
++ (void)getCity:(NSString*)cId
+            andFillInfo:(void (^)(NSString*))fillInfo;
 @end

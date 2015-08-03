@@ -25,7 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-     [self setFriends:[EERequest friendRequest]];
+    self.title = @"Friends";
+    [self setFriends:[EERequest friendRequest]];
 }
 
 - (void)didReceiveMemoryWarning {

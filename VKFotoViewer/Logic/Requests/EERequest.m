@@ -44,33 +44,22 @@
     return res;
 }
 
-+ (NSData *)getIdInfo:(NSString *)curId {
++ (void)getIdInfo:(NSString *)curId successBlock:(void (^)(NSDictionary *))createInfo {
     NSString* fields = [NSString stringWithFormat:@"sex,bdate,city,country,photo_200,contacts,music,movies,universities,schools,status,counters,connections"];
     NSString *accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:@"VKAccessToken"];
     NSString* stringReq = [NSString stringWithFormat:@"https://api.vk.com/method/users.get?user_id=%@&fields=%@&access_token=%@", curId, fields, accessToken];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:stringReq]
-                                                           cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
-                                                       timeoutInterval:60.0];
-    return [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    NSURL *URL = [NSURL URLWithString:stringReq];
+    NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:sessionConfiguration];
+    [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+        createInfo(responseObject[@"response"][0]);
+    }];
+    [dataTask resume];
 }
 
-+ (NSString*)getCity:(NSString*)cId {
-    if (![[NSString stringWithFormat:@"%@", cId ]  isEqual: @"0"]) {
-        NSString* strReq = [NSString stringWithFormat:@"https://api.vk.com/method/database.getCitiesById?city_ids=%@", cId];
-        NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:strReq]
-                                                           cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:60.0];
-        NSData *response = [NSURLConnection sendSynchronousRequest:req returningResponse:nil error:nil];
-        NSDictionary* lData = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingAllowFragments error:nil];
-        NSDictionary* ll = lData[@"response"][0];
-        NSString *res = ll[@"name"];
-        return res;
-    }
-    else {
-        return @"";
-    }
-}
-
-+ (void)AFgetCity:(NSString*)cId andFillInfo:(void (^)(NSString*))fillInfo {
++ (void)getCity:(NSString*)cId andFillInfo:(void (^)(NSString*))fillInfo {
     NSString __block *res = @"";
     if (cId && ![[NSString stringWithFormat:@"%@", cId ]  isEqual: @"0"]) {
         NSString* const strReq = [NSString stringWithFormat:@"https://api.vk.com/method/database.getCitiesById?city_ids=%@", cId];

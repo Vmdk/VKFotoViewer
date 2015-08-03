@@ -18,28 +18,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [EEProcessor friendId:_id fillInfo:^(NSDictionary* dict) {
-        
+    [EEProcessor friendId:_id fillInfo:^(NSDictionary* info) {
+        [self initPhoto:info[@"photo"]];
+        _name.text = info[@"name"];
+        _shortInfo.text = info[@"short_info"];
     }];
-    
-    NSData *lInfo = [EERequest getIdInfo:_id];
-    [self fillInfo:lInfo];
     self.automaticallyAdjustsScrollViewInsets = NO;
-}
-
-- (void)fillInfo:(NSData*)info {
-    NSDictionary* larr = [NSJSONSerialization JSONObjectWithData:info options:NSJSONReadingAllowFragments error:nil];
-    NSDictionary *lInfo = larr[@"response"][0];
-    //set Name
-    _name.text = [NSString stringWithFormat:@"%@ %@",lInfo[@"first_name"],lInfo[@"last_name"]];
-    [self initPhoto:lInfo[@"photo_200"]];
-    NSString* lAge = [EELogic getAge:lInfo[@"bdate"]];    
-    [EERequest AFgetCity:lInfo[@"city"] andFillInfo:^(NSString* str){
-        _shortInfo.text = [NSString stringWithFormat:@"%@%@",lAge, str];
-    }];
-//    [EERequest AFgetCity:lInfo[@"city"] andFillInfo:^(NSString* str){
-//        [self setCity:str];
-//    }];
 }
 
 - (void)setId:(NSString *)ind {
