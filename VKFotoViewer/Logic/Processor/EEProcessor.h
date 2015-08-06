@@ -11,5 +11,5 @@
 @interface EEProcessor : NSObject
 
 + (void)friendId:(NSString*)fId fillInfo:(void (^)(NSDictionary*))fillOrder;
-
++ (void)prepareAlbumsFor:(NSString*)uId successBlock:(void (^)(NSArray*))createAlbums;
 @end

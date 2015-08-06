@@ -16,4 +16,6 @@
             successBlock:(void (^)(NSDictionary*))createInfo;
 + (void)getCity:(NSString*)cId
             andFillInfo:(void (^)(NSString*))fillInfo;
++ (void)getAlbums:(NSString*)uId
+     successBlock:(void (^)(NSArray*))createAlbums;
 @end

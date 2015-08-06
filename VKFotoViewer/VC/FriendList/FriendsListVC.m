@@ -9,6 +9,7 @@
 #import "FriendsListVC.h"
 #import "EERequest.h"
 #import "EEFriendInfoVC.h"
+#import "EEAlbumsListVC.h"
 
 @interface FriendsListVC ()
 
@@ -46,16 +47,20 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if(indexPath.row == _rows) {
-        
     }
     UITableViewCell *lCell = [tableView dequeueReusableCellWithIdentifier:@"identifier"];
     if (lCell == nil) {
         lCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"identifier"];
         lCell.accessoryType = UITableViewCellAccessoryDetailButton;
     }
-    
     lCell.textLabel.text = [_names objectAtIndex:indexPath.row];
     return lCell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    EEAlbumsListVC* vc = [[EEAlbumsListVC alloc] init];
+    [vc prepareInfoFor:_friendsId[indexPath.row]];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {

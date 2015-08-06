@@ -67,4 +67,10 @@
     }
     return res;
 }
+
++ (void)prepareAlbumsFor:(NSString *)uId successBlock:(void (^)(NSArray *))createAlbums {
+    [EERequest getAlbums:uId successBlock:^(NSArray* albums){
+        createAlbums(albums);        
+    }];
+}
 @end
