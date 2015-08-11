@@ -21,7 +21,9 @@
 		E11DDFBE1B6D29E600FB99E0 /* EEInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E11DDFBA1B6D29E600FB99E0 /* EEInfo.m */; };
 		E11DDFBF1B6D29E600FB99E0 /* EELogic.m in Sources */ = {isa = PBXBuildFile; fileRef = E11DDFBC1B6D29E600FB99E0 /* EELogic.m */; };
 		E1CD4A401B7A0D60000D8D98 /* EEAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD4A3F1B7A0D60000D8D98 /* EEAlbum.m */; };
-		E1CD4A421B7A0DCD000D8D98 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1CD4A411B7A0DCD000D8D98 /* View.xib */; };
+		E1CD4A471B7A341B000D8D98 /* EEPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD4A451B7A341B000D8D98 /* EEPhotoCell.m */; };
+		E1CD4A481B7A341B000D8D98 /* EEPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1CD4A461B7A341B000D8D98 /* EEPhotoCell.xib */; };
+		E1CD4A4A1B7A382A000D8D98 /* EEAlbum.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1CD4A491B7A382A000D8D98 /* EEAlbum.xib */; };
 		E1EF3C7A1B46F9CC00D0259F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1EF3C791B46F9CC00D0259F /* main.m */; };
 		E1EF3C7D1B46F9CC00D0259F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1EF3C7C1B46F9CC00D0259F /* AppDelegate.m */; };
 		E1EF3C851B46F9CC00D0259F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1EF3C841B46F9CC00D0259F /* Images.xcassets */; };
@@ -69,7 +71,10 @@
 		E11DDFBC1B6D29E600FB99E0 /* EELogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EELogic.m; path = Logic/EELogic.m; sourceTree = "<group>"; };
 		E1CD4A3E1B7A0D60000D8D98 /* EEAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EEAlbum.h; path = VC/Photos/PhotosINAlbum/EEAlbum.h; sourceTree = "<group>"; };
 		E1CD4A3F1B7A0D60000D8D98 /* EEAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EEAlbum.m; path = VC/Photos/PhotosINAlbum/EEAlbum.m; sourceTree = "<group>"; };
-		E1CD4A411B7A0DCD000D8D98 /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
+		E1CD4A441B7A341B000D8D98 /* EEPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EEPhotoCell.h; path = VC/Photos/PhotosINAlbum/PhotoCell/EEPhotoCell.h; sourceTree = "<group>"; };
+		E1CD4A451B7A341B000D8D98 /* EEPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EEPhotoCell.m; path = VC/Photos/PhotosINAlbum/PhotoCell/EEPhotoCell.m; sourceTree = "<group>"; };
+		E1CD4A461B7A341B000D8D98 /* EEPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EEPhotoCell.xib; path = VC/Photos/PhotosINAlbum/PhotoCell/EEPhotoCell.xib; sourceTree = "<group>"; };
+		E1CD4A491B7A382A000D8D98 /* EEAlbum.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EEAlbum.xib; sourceTree = "<group>"; };
 		E1EF3C741B46F9CC00D0259F /* VKFotoViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKFotoViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1EF3C781B46F9CC00D0259F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1EF3C791B46F9CC00D0259F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -202,9 +207,20 @@
 			children = (
 				E1CD4A3E1B7A0D60000D8D98 /* EEAlbum.h */,
 				E1CD4A3F1B7A0D60000D8D98 /* EEAlbum.m */,
-				E1CD4A411B7A0DCD000D8D98 /* View.xib */,
+				E1CD4A491B7A382A000D8D98 /* EEAlbum.xib */,
+				E1CD4A431B7A33D5000D8D98 /* PhotoCell */,
 			);
 			name = PhotosInAlbum;
+			sourceTree = "<group>";
+		};
+		E1CD4A431B7A33D5000D8D98 /* PhotoCell */ = {
+			isa = PBXGroup;
+			children = (
+				E1CD4A441B7A341B000D8D98 /* EEPhotoCell.h */,
+				E1CD4A451B7A341B000D8D98 /* EEPhotoCell.m */,
+				E1CD4A461B7A341B000D8D98 /* EEPhotoCell.xib */,
+			);
+			name = PhotoCell;
 			sourceTree = "<group>";
 		};
 		E1E362561B5AB31400DBF8C8 /* FriendInfo */ = {
@@ -389,11 +405,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1CD4A481B7A341B000D8D98 /* EEPhotoCell.xib in Resources */,
 				E1F5264F1B73AB7000C2FD29 /* EEAlbumsListVC.xib in Resources */,
 				E1EF3C881B46F9CC00D0259F /* LaunchScreen.xib in Resources */,
 				E11DDFA51B6D297400FB99E0 /* EEFriendInfoVC.xib in Resources */,
 				E1F526551B73B60100C2FD29 /* EEAlbumCell.xib in Resources */,
-				E1CD4A421B7A0DCD000D8D98 /* View.xib in Resources */,
+				E1CD4A4A1B7A382A000D8D98 /* EEAlbum.xib in Resources */,
 				E11DDFB41B6D29B000FB99E0 /* FriendsListVC.xib in Resources */,
 				E11DDFAF1B6D299C00FB99E0 /* LogInView.xib in Resources */,
 				E1EF3C851B46F9CC00D0259F /* Images.xcassets in Resources */,
@@ -460,6 +477,7 @@
 				E1EF3C7A1B46F9CC00D0259F /* main.m in Sources */,
 				E11DDF871B6D27B200FB99E0 /* EEProcessor.m in Sources */,
 				E11DDFAE1B6D299C00FB99E0 /* LogInView.m in Sources */,
+				E1CD4A471B7A341B000D8D98 /* EEPhotoCell.m in Sources */,
 				E1F526541B73B60100C2FD29 /* EEAlbumCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,6 +9,7 @@
 #import "EEAlbumsListVC.h"
 #import "EEProcessor.h"
 #import "EEAlbumCell.h"
+#import "EEAlbum.h"
 
 @implementation EEAlbumsListVC {
     NSArray* _albums;
@@ -30,6 +31,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _albums.count;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    EEAlbum *vc = [[EEAlbum alloc] init];
+    [vc createAlbum:_albums[indexPath.row][@"aid"] forUser:_albums[indexPath.row][@"owner_id"]];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
-@interface EEAlbum : UIViewController
+@interface EEAlbum : UIViewController  <UICollectionViewDataSource, UICollectionViewDelegate> {
+    IBOutlet UICollectionView *_Collection;
+}
+
+- (void)createAlbum:(NSString*)albId forUser:(NSString*)uId;
 
 @end

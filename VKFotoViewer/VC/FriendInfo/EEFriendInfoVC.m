@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.title = @"Information";
     [EEProcessor friendId:_id fillInfo:^(NSDictionary* info) {
         [self initPhoto:info[@"photo"]];
         _name.text = info[@"name"];

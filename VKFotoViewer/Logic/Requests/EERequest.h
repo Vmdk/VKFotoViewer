@@ -18,4 +18,6 @@
             andFillInfo:(void (^)(NSString*))fillInfo;
 + (void)getAlbums:(NSString*)uId
      successBlock:(void (^)(NSArray*))createAlbums;
++ (void)getPhotos:(NSString*)albId forUser:(NSString*)uId successBlock:(void (^)(NSArray*))createPhotos;
+
 @end

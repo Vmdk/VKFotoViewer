@@ -18,7 +18,7 @@
     NSData *data =[[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:lInfo[@"thumb_src"]]];
     _albumPhoto.image = [UIImage imageWithData:data];
     _albumName.text =lInfo[@"title"];
-    _NumOfPhotos.text = [NSString stringWithFormat:@"%i",(int)lInfo[@"size"]];
+    _NumOfPhotos.text = [NSString stringWithFormat:@"%@",lInfo[@"size"]];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

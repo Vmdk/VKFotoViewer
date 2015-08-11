@@ -44,7 +44,7 @@
     }
     return res;
 }
-+(NSArray*)getEducation:(NSDictionary*)dict {
++ (NSArray*)getEducation:(NSDictionary*)dict {
     NSMutableArray* res = [NSMutableArray array];
     NSArray* schools = dict[@"schools"];
     if (dict[@"schools"] && schools.count != 0) {
@@ -72,5 +72,12 @@
     [EERequest getAlbums:uId successBlock:^(NSArray* albums){
         createAlbums(albums);        
     }];
+}
+
++ (void)createAlbum:(NSString *)albId forUser:(NSString*)uId withPhotos:(void (^)(NSArray *))createPhotos {
+    [EERequest getPhotos:albId forUser:uId successBlock:^(NSArray* photos){
+        createPhotos(photos);
+    }];
+    
 }
 @end

@@ -6,7 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EEAlbum">
             <connections>
-                <outlet property="view" destination="iN0-l3-epB" id="xdj-KE-t2Q"/>
+                <outlet property="_Collection" destination="ubE-jD-pmD" id="Wsq-nq-MtQ"/>
+                <outlet property="view" destination="iN0-l3-epB" id="CFl-yx-Wn5"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -14,23 +15,28 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="u2t-CG-bMC">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ubE-jD-pmD">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="V2y-1I-ha0">
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PyT-u1-KHQ">
                         <size key="itemSize" width="50" height="50"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="gKK-eO-amP"/>
+                        <outlet property="delegate" destination="-1" id="gCS-QD-iHd"/>
+                    </connections>
                 </collectionView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="u2t-CG-bMC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5Ut-L6-mCa"/>
-                <constraint firstAttribute="bottom" secondItem="u2t-CG-bMC" secondAttribute="bottom" id="eo7-6s-fH7"/>
-                <constraint firstItem="u2t-CG-bMC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="uHm-WZ-ejM"/>
-                <constraint firstAttribute="trailing" secondItem="u2t-CG-bMC" secondAttribute="trailing" id="x7b-17-oOL"/>
+                <constraint firstAttribute="trailing" secondItem="ubE-jD-pmD" secondAttribute="trailing" id="5yb-rQ-Ny3"/>
+                <constraint firstItem="ubE-jD-pmD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="bP9-Vx-LIO"/>
+                <constraint firstItem="ubE-jD-pmD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="e2T-mq-xER"/>
+                <constraint firstAttribute="bottom" secondItem="ubE-jD-pmD" secondAttribute="bottom" id="pQF-nP-At8"/>
             </constraints>
+            <point key="canvasLocation" x="240" y="209"/>
         </view>
     </objects>
 </document>

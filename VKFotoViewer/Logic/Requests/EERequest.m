@@ -57,6 +57,19 @@
     [dataTask resume];
 }
 
++ (void)getPhotos:(NSString *)albId forUser:(NSString*)uId successBlock:(void (^)(NSArray *))createPhotos {
+    NSString* stringReq = [NSString stringWithFormat:@"https://api.vk.com/method/photos.get?owner_id=%@&album_id=%@",uId, albId];
+    NSURL *URL = [NSURL URLWithString:stringReq];
+    NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:sessionConfiguration];
+    [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+        createPhotos(responseObject[@"response"]);
+    }];
+    [dataTask resume];
+}
+
 + (void)getIdInfo:(NSString *)curId successBlock:(void (^)(NSDictionary *))createInfo {
     NSString* fields = [NSString stringWithFormat:@"sex,bdate,city,country,photo_200,contacts,music,movies,universities,schools,status,counters,connections"];
     NSString *accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:@"VKAccessToken"];
