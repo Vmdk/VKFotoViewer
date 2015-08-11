@@ -42,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VKFotoViewer/VC/Authorization/LogInView.m"
-            timestampString = "460566981.017262"
+            timestampString = "460567109.482853"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "-webView:shouldStartLoadWithRequest:navigationType:"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "-loginState:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -57,13 +57,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "VKFotoViewer/VC/Authorization/LogInView.m"
-            timestampString = "460567109.482853"
+            filePath = "VKFotoViewer/VC/Photos/Albums/AlbumCell/EEAlbumCell.m"
+            timestampString = "460985902.38169"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "-loginState:"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "-prepareInfo:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

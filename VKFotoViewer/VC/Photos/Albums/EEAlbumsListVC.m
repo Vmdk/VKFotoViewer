@@ -16,7 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"Albums";
     
+    [_albumsList registerNib:[UINib nibWithNibName:NSStringFromClass([EEAlbumCell class]) bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"AlbumCell"];
 }
 
 - (void)prepareInfoFor:(NSString *)uId {
@@ -30,12 +32,13 @@
     return _albums.count;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 100;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    EEAlbumCell *lCell = [tableView dequeueReusableCellWithIdentifier:@"identifier"];
-    if (lCell == nil) {
-        lCell = [[EEAlbumCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"identifier"];
-        [lCell prepareInfo:_albums[indexPath.row]];
-    }
+    EEAlbumCell *lCell = [tableView dequeueReusableCellWithIdentifier:@"AlbumCell"];
+    [lCell prepareInfo:_albums[indexPath.row]];
     return lCell;
 }
 @end

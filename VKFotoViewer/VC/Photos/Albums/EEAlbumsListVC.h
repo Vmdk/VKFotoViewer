@@ -14,4 +14,5 @@
 }
 
 - (void)prepareInfoFor:(NSString*)uId;
+
 @end

@@ -20,6 +20,8 @@
 		E11DDFB71B6D29C600FB99E0 /* EERequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E11DDFB61B6D29C600FB99E0 /* EERequest.m */; };
 		E11DDFBE1B6D29E600FB99E0 /* EEInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E11DDFBA1B6D29E600FB99E0 /* EEInfo.m */; };
 		E11DDFBF1B6D29E600FB99E0 /* EELogic.m in Sources */ = {isa = PBXBuildFile; fileRef = E11DDFBC1B6D29E600FB99E0 /* EELogic.m */; };
+		E1CD4A401B7A0D60000D8D98 /* EEAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD4A3F1B7A0D60000D8D98 /* EEAlbum.m */; };
+		E1CD4A421B7A0DCD000D8D98 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1CD4A411B7A0DCD000D8D98 /* View.xib */; };
 		E1EF3C7A1B46F9CC00D0259F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1EF3C791B46F9CC00D0259F /* main.m */; };
 		E1EF3C7D1B46F9CC00D0259F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1EF3C7C1B46F9CC00D0259F /* AppDelegate.m */; };
 		E1EF3C851B46F9CC00D0259F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1EF3C841B46F9CC00D0259F /* Images.xcassets */; };
@@ -65,6 +67,9 @@
 		E11DDFBA1B6D29E600FB99E0 /* EEInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EEInfo.m; path = Logic/EEInfo.m; sourceTree = "<group>"; };
 		E11DDFBB1B6D29E600FB99E0 /* EELogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EELogic.h; path = Logic/EELogic.h; sourceTree = "<group>"; };
 		E11DDFBC1B6D29E600FB99E0 /* EELogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EELogic.m; path = Logic/EELogic.m; sourceTree = "<group>"; };
+		E1CD4A3E1B7A0D60000D8D98 /* EEAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EEAlbum.h; path = VC/Photos/PhotosINAlbum/EEAlbum.h; sourceTree = "<group>"; };
+		E1CD4A3F1B7A0D60000D8D98 /* EEAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EEAlbum.m; path = VC/Photos/PhotosINAlbum/EEAlbum.m; sourceTree = "<group>"; };
+		E1CD4A411B7A0DCD000D8D98 /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 		E1EF3C741B46F9CC00D0259F /* VKFotoViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKFotoViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1EF3C781B46F9CC00D0259F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1EF3C791B46F9CC00D0259F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -192,6 +197,16 @@
 			name = VC;
 			sourceTree = "<group>";
 		};
+		E1CD4A3D1B7A0D0F000D8D98 /* PhotosInAlbum */ = {
+			isa = PBXGroup;
+			children = (
+				E1CD4A3E1B7A0D60000D8D98 /* EEAlbum.h */,
+				E1CD4A3F1B7A0D60000D8D98 /* EEAlbum.m */,
+				E1CD4A411B7A0DCD000D8D98 /* View.xib */,
+			);
+			name = PhotosInAlbum;
+			sourceTree = "<group>";
+		};
 		E1E362561B5AB31400DBF8C8 /* FriendInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,6 +280,7 @@
 		E1F526491B73AA3800C2FD29 /* Photos */ = {
 			isa = PBXGroup;
 			children = (
+				E1CD4A3D1B7A0D0F000D8D98 /* PhotosInAlbum */,
 				E1F5264A1B73AA6600C2FD29 /* Albums */,
 			);
 			name = Photos;
@@ -377,6 +393,7 @@
 				E1EF3C881B46F9CC00D0259F /* LaunchScreen.xib in Resources */,
 				E11DDFA51B6D297400FB99E0 /* EEFriendInfoVC.xib in Resources */,
 				E1F526551B73B60100C2FD29 /* EEAlbumCell.xib in Resources */,
+				E1CD4A421B7A0DCD000D8D98 /* View.xib in Resources */,
 				E11DDFB41B6D29B000FB99E0 /* FriendsListVC.xib in Resources */,
 				E11DDFAF1B6D299C00FB99E0 /* LogInView.xib in Resources */,
 				E1EF3C851B46F9CC00D0259F /* Images.xcassets in Resources */,
@@ -432,6 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E11DDFBE1B6D29E600FB99E0 /* EEInfo.m in Sources */,
+				E1CD4A401B7A0D60000D8D98 /* EEAlbum.m in Sources */,
 				E11DDFBF1B6D29E600FB99E0 /* EELogic.m in Sources */,
 				E11DDFA41B6D297400FB99E0 /* EEFriendInfoVC.m in Sources */,
 				E1F5264D1B73AAB200C2FD29 /* EEAlbumsListVC.m in Sources */,

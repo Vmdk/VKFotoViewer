@@ -15,5 +15,4 @@
 }
 
 -(void)prepareInfo:(NSDictionary*)lInfo;
-
 @end
