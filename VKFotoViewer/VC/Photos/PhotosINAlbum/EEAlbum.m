@@ -19,8 +19,8 @@
     [super viewDidLoad];
     _Photos = [NSArray array];
     
-    [_Collection registerClass:[EEPhotoCell class] forCellWithReuseIdentifier:@"PhotoCell"];
-    
+    //[_Collection registerClass:[EEPhotoCell class] forCellWithReuseIdentifier:@"PhotoCell"];
+    [_Collection registerNib:[UINib nibWithNibName:NSStringFromClass([EEPhotoCell class]) bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"PhotoCell"];
 //    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
 //    [flowLayout setItemSize:CGSizeMake(200, 200)];
 //    [flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
