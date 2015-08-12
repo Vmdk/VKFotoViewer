@@ -9,7 +9,15 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface EEResponsePhotoModel : NSObject
+@interface EEResponsePhotoModel : NSObject {
+    NSString* _75;
+    NSString* _130;
+    NSString* _604;
+    NSString* _807;
+    NSString* _1280;
+    NSString* _2560;
+    NSString* _description;
+}
 
 - (instancetype)initWithData:(NSDictionary*)data;
 + (NSArray*)createModelArray:(NSArray*)photos;

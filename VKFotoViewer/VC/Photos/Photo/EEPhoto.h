@@ -13,5 +13,6 @@
     IBOutlet UIImageView *_photoView;
 }
 
+@property (nonatomic, retain) UIImage* photo;
 - (void)setPhoto:(UIImage*)photo;
 @end

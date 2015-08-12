@@ -15,10 +15,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-}
-
-- (void)setPhoto:(UIImage *)photo {
-    _photoView.image = photo;
+    _photoView.image = _photo;
 }
 
 @end

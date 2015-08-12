@@ -8,15 +8,7 @@
 
 #import "EEResponsePhotoModel.h"
 
-@implementation EEResponsePhotoModel {
-    NSString* _75;
-    NSString* _130;
-    NSString* _604;
-    NSString* _807;
-    NSString* _1280;
-    NSString* _2560;
-    NSString* _description;
-}
+@implementation EEResponsePhotoModel 
 
 - (instancetype)initWithData:(NSDictionary *)data {
     self = [self init];
