@@ -12,5 +12,5 @@
     IBOutlet UIImageView* _Image;
 }
 
-- (void) setPhoto:(NSDictionary*)photo;
+- (void) setPhoto:(UIImage*)photo;
 @end

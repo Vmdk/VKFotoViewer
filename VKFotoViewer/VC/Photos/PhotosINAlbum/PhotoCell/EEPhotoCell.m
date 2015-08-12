@@ -14,9 +14,8 @@
     // Initialization code
 }
 
-- (void)setPhoto:(NSDictionary *)photo {
-    NSData *data =[[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:photo[@"src_small"]]];
-    _Image.image = [UIImage imageWithData:data];
+- (void)setPhoto:(UIImage *)photo {
+    _Image.image = photo;
 }
 
 - (id)initWithFrame:(CGRect)frame

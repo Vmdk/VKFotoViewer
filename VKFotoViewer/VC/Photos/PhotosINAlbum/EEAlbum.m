@@ -9,6 +9,8 @@
 #import "EEAlbum.h"
 #import "EEProcessor.h"
 #import "EEPhotoCell.h"
+#import "EEPhoto.h"
+#import "EEResponsePhotoModel.h"
 
 @implementation EEAlbum {
     NSArray* _Photos;
@@ -34,6 +36,12 @@
     }];
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    EEPhoto *vc = [[EEPhoto alloc] init];
+    [vc setPhoto:[(EEResponsePhotoModel*)_Photos[indexPath.row] getLargestPhoto]];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return _Photos.count;
@@ -42,7 +50,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *identifier = @"PhotoCell";    
     EEPhotoCell *cell = (EEPhotoCell *)[collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
-    [cell setPhoto:_Photos[indexPath.row]];
+    [cell setPhoto:[(EEResponsePhotoModel*)_Photos[indexPath.row] getSmallPhoto]];
     
     return cell;
     

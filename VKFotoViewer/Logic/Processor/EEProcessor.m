@@ -8,6 +8,7 @@
 
 #import "EEProcessor.h"
 #import "EERequest.h"
+#import "EEResponsePhotoModel.h"
 
 @implementation EEProcessor
 
@@ -76,7 +77,8 @@
 
 + (void)createAlbum:(NSString *)albId forUser:(NSString*)uId withPhotos:(void (^)(NSArray *))createPhotos {
     [EERequest getPhotos:albId forUser:uId successBlock:^(NSArray* photos){
-        createPhotos(photos);
+        NSArray* modelArray = [EEResponsePhotoModel createModelArray:photos];
+        createPhotos(modelArray);
     }];
     
 }

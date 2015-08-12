@@ -20,6 +20,9 @@
 		E11DDFB71B6D29C600FB99E0 /* EERequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E11DDFB61B6D29C600FB99E0 /* EERequest.m */; };
 		E11DDFBE1B6D29E600FB99E0 /* EEInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E11DDFBA1B6D29E600FB99E0 /* EEInfo.m */; };
 		E11DDFBF1B6D29E600FB99E0 /* EELogic.m in Sources */ = {isa = PBXBuildFile; fileRef = E11DDFBC1B6D29E600FB99E0 /* EELogic.m */; };
+		E11DF2881B7B71CA00B27F90 /* EEPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = E11DF2871B7B71CA00B27F90 /* EEPhoto.m */; };
+		E11DF28A1B7B721100B27F90 /* EEPhoto.xib in Resources */ = {isa = PBXBuildFile; fileRef = E11DF2891B7B721100B27F90 /* EEPhoto.xib */; };
+		E11DF28E1B7B80B400B27F90 /* EEResponsePhotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E11DF28D1B7B80B400B27F90 /* EEResponsePhotoModel.m */; };
 		E1CD4A401B7A0D60000D8D98 /* EEAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD4A3F1B7A0D60000D8D98 /* EEAlbum.m */; };
 		E1CD4A471B7A341B000D8D98 /* EEPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD4A451B7A341B000D8D98 /* EEPhotoCell.m */; };
 		E1CD4A481B7A341B000D8D98 /* EEPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1CD4A461B7A341B000D8D98 /* EEPhotoCell.xib */; };
@@ -69,6 +72,11 @@
 		E11DDFBA1B6D29E600FB99E0 /* EEInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EEInfo.m; path = Logic/EEInfo.m; sourceTree = "<group>"; };
 		E11DDFBB1B6D29E600FB99E0 /* EELogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EELogic.h; path = Logic/EELogic.h; sourceTree = "<group>"; };
 		E11DDFBC1B6D29E600FB99E0 /* EELogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EELogic.m; path = Logic/EELogic.m; sourceTree = "<group>"; };
+		E11DF2861B7B71CA00B27F90 /* EEPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EEPhoto.h; path = VC/Photos/Photo/EEPhoto.h; sourceTree = "<group>"; };
+		E11DF2871B7B71CA00B27F90 /* EEPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EEPhoto.m; path = VC/Photos/Photo/EEPhoto.m; sourceTree = "<group>"; };
+		E11DF2891B7B721100B27F90 /* EEPhoto.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EEPhoto.xib; sourceTree = "<group>"; };
+		E11DF28C1B7B80B400B27F90 /* EEResponsePhotoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EEResponsePhotoModel.h; path = Logic/Models/PhotoModel/EEResponsePhotoModel.h; sourceTree = "<group>"; };
+		E11DF28D1B7B80B400B27F90 /* EEResponsePhotoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EEResponsePhotoModel.m; path = Logic/Models/PhotoModel/EEResponsePhotoModel.m; sourceTree = "<group>"; };
 		E1CD4A3E1B7A0D60000D8D98 /* EEAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EEAlbum.h; path = VC/Photos/PhotosINAlbum/EEAlbum.h; sourceTree = "<group>"; };
 		E1CD4A3F1B7A0D60000D8D98 /* EEAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EEAlbum.m; path = VC/Photos/PhotosINAlbum/EEAlbum.m; sourceTree = "<group>"; };
 		E1CD4A441B7A341B000D8D98 /* EEPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EEPhotoCell.h; path = VC/Photos/PhotosINAlbum/PhotoCell/EEPhotoCell.h; sourceTree = "<group>"; };
@@ -147,10 +155,38 @@
 			name = Processor;
 			sourceTree = "<group>";
 		};
+		E11DF2851B7B718F00B27F90 /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				E11DF2861B7B71CA00B27F90 /* EEPhoto.h */,
+				E11DF2871B7B71CA00B27F90 /* EEPhoto.m */,
+				E11DF2891B7B721100B27F90 /* EEPhoto.xib */,
+			);
+			name = Photo;
+			sourceTree = "<group>";
+		};
+		E11DF28B1B7B805B00B27F90 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E11DF28F1B7B80B900B27F90 /* PhotoModel */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		E11DF28F1B7B80B900B27F90 /* PhotoModel */ = {
+			isa = PBXGroup;
+			children = (
+				E11DF28C1B7B80B400B27F90 /* EEResponsePhotoModel.h */,
+				E11DF28D1B7B80B400B27F90 /* EEResponsePhotoModel.m */,
+			);
+			name = PhotoModel;
+			sourceTree = "<group>";
+		};
 		E1990C301B529CCD00722250 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
 				E11DDF831B6D274300FB99E0 /* Requests */,
+				E11DF28B1B7B805B00B27F90 /* Models */,
 				E11DDF841B6D276300FB99E0 /* Processor */,
 				E11DDFB91B6D29E600FB99E0 /* EEInfo.h */,
 				E11DDFBA1B6D29E600FB99E0 /* EEInfo.m */,
@@ -296,6 +332,7 @@
 		E1F526491B73AA3800C2FD29 /* Photos */ = {
 			isa = PBXGroup;
 			children = (
+				E11DF2851B7B718F00B27F90 /* Photo */,
 				E1CD4A3D1B7A0D0F000D8D98 /* PhotosInAlbum */,
 				E1F5264A1B73AA6600C2FD29 /* Albums */,
 			);
@@ -407,6 +444,7 @@
 			files = (
 				E1CD4A481B7A341B000D8D98 /* EEPhotoCell.xib in Resources */,
 				E1F5264F1B73AB7000C2FD29 /* EEAlbumsListVC.xib in Resources */,
+				E11DF28A1B7B721100B27F90 /* EEPhoto.xib in Resources */,
 				E1EF3C881B46F9CC00D0259F /* LaunchScreen.xib in Resources */,
 				E11DDFA51B6D297400FB99E0 /* EEFriendInfoVC.xib in Resources */,
 				E1F526551B73B60100C2FD29 /* EEAlbumCell.xib in Resources */,
@@ -472,12 +510,14 @@
 				E1F5264D1B73AAB200C2FD29 /* EEAlbumsListVC.m in Sources */,
 				E11DDFB71B6D29C600FB99E0 /* EERequest.m in Sources */,
 				E1EF3C7D1B46F9CC00D0259F /* AppDelegate.m in Sources */,
+				E11DF2881B7B71CA00B27F90 /* EEPhoto.m in Sources */,
 				E11DDFA91B6D298900FB99E0 /* ViewController.m in Sources */,
 				E11DDFB31B6D29B000FB99E0 /* FriendsListVC.m in Sources */,
 				E1EF3C7A1B46F9CC00D0259F /* main.m in Sources */,
 				E11DDF871B6D27B200FB99E0 /* EEProcessor.m in Sources */,
 				E11DDFAE1B6D299C00FB99E0 /* LogInView.m in Sources */,
 				E1CD4A471B7A341B000D8D98 /* EEPhotoCell.m in Sources */,
+				E11DF28E1B7B80B400B27F90 /* EEResponsePhotoModel.m in Sources */,
 				E1F526541B73B60100C2FD29 /* EEAlbumCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
