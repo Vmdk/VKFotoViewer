@@ -23,6 +23,7 @@
 		E11DF2881B7B71CA00B27F90 /* EEPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = E11DF2871B7B71CA00B27F90 /* EEPhoto.m */; };
 		E11DF28A1B7B721100B27F90 /* EEPhoto.xib in Resources */ = {isa = PBXBuildFile; fileRef = E11DF2891B7B721100B27F90 /* EEPhoto.xib */; };
 		E11DF28E1B7B80B400B27F90 /* EEResponsePhotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E11DF28D1B7B80B400B27F90 /* EEResponsePhotoModel.m */; };
+		E14FA5F41B84B24300EF5956 /* EEResponseUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E14FA5F31B84B24300EF5956 /* EEResponseUserModel.m */; };
 		E1CD4A401B7A0D60000D8D98 /* EEAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD4A3F1B7A0D60000D8D98 /* EEAlbum.m */; };
 		E1CD4A471B7A341B000D8D98 /* EEPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD4A451B7A341B000D8D98 /* EEPhotoCell.m */; };
 		E1CD4A481B7A341B000D8D98 /* EEPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1CD4A461B7A341B000D8D98 /* EEPhotoCell.xib */; };
@@ -77,6 +78,8 @@
 		E11DF2891B7B721100B27F90 /* EEPhoto.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EEPhoto.xib; sourceTree = "<group>"; };
 		E11DF28C1B7B80B400B27F90 /* EEResponsePhotoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EEResponsePhotoModel.h; path = Logic/Models/PhotoModel/EEResponsePhotoModel.h; sourceTree = "<group>"; };
 		E11DF28D1B7B80B400B27F90 /* EEResponsePhotoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EEResponsePhotoModel.m; path = Logic/Models/PhotoModel/EEResponsePhotoModel.m; sourceTree = "<group>"; };
+		E14FA5F21B84B24300EF5956 /* EEResponseUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EEResponseUserModel.h; path = Logic/Models/UserModel/EEResponseUserModel.h; sourceTree = "<group>"; };
+		E14FA5F31B84B24300EF5956 /* EEResponseUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EEResponseUserModel.m; path = Logic/Models/UserModel/EEResponseUserModel.m; sourceTree = "<group>"; };
 		E1CD4A3E1B7A0D60000D8D98 /* EEAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EEAlbum.h; path = VC/Photos/PhotosINAlbum/EEAlbum.h; sourceTree = "<group>"; };
 		E1CD4A3F1B7A0D60000D8D98 /* EEAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EEAlbum.m; path = VC/Photos/PhotosINAlbum/EEAlbum.m; sourceTree = "<group>"; };
 		E1CD4A441B7A341B000D8D98 /* EEPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EEPhotoCell.h; path = VC/Photos/PhotosINAlbum/PhotoCell/EEPhotoCell.h; sourceTree = "<group>"; };
@@ -168,6 +171,7 @@
 		E11DF28B1B7B805B00B27F90 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E14FA5F11B84B21500EF5956 /* UserModel */,
 				E11DF28F1B7B80B900B27F90 /* PhotoModel */,
 			);
 			name = Models;
@@ -180,6 +184,15 @@
 				E11DF28D1B7B80B400B27F90 /* EEResponsePhotoModel.m */,
 			);
 			name = PhotoModel;
+			sourceTree = "<group>";
+		};
+		E14FA5F11B84B21500EF5956 /* UserModel */ = {
+			isa = PBXGroup;
+			children = (
+				E14FA5F21B84B24300EF5956 /* EEResponseUserModel.h */,
+				E14FA5F31B84B24300EF5956 /* EEResponseUserModel.m */,
+			);
+			name = UserModel;
 			sourceTree = "<group>";
 		};
 		E1990C301B529CCD00722250 /* Logic */ = {
@@ -506,6 +519,7 @@
 				E11DDFBE1B6D29E600FB99E0 /* EEInfo.m in Sources */,
 				E1CD4A401B7A0D60000D8D98 /* EEAlbum.m in Sources */,
 				E11DDFBF1B6D29E600FB99E0 /* EELogic.m in Sources */,
+				E14FA5F41B84B24300EF5956 /* EEResponseUserModel.m in Sources */,
 				E11DDFA41B6D297400FB99E0 /* EEFriendInfoVC.m in Sources */,
 				E1F5264D1B73AAB200C2FD29 /* EEAlbumsListVC.m in Sources */,
 				E11DDFB71B6D29C600FB99E0 /* EERequest.m in Sources */,

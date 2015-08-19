@@ -10,6 +10,7 @@
 #import "EERequest.h"
 #import "EELogic.h"
 #import "EEProcessor.h"
+#import "EEResponseUserModel.h"
 
 @implementation EEFriendInfoVC {
     NSString *_id;
@@ -19,11 +20,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Information";
-    [EEProcessor friendId:_id fillInfo:^(NSDictionary* info) {
-        [self initPhoto:info[@"photo"]];
-        _name.text = info[@"name"];
-        _shortInfo.text = info[@"short_info"];
-        _tableData = info[@"table_info"];
+    [EEProcessor friendId:_id fillInfo:^(EEResponseUserModel* user) {
+        _photo.image = user.userPhoto;
+        _name.text = user.name;
+        _shortInfo.text = @"";
+        _tableData = user.tableInfo;
         [_TableWithInfo reloadData];
     }];
     self.automaticallyAdjustsScrollViewInsets = NO;
@@ -50,6 +51,9 @@
         NSArray *curentInfo = [_tableData objectForKey:curentKey];
         return curentInfo.count;
     }
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 50.0f;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

@@ -37,7 +37,7 @@
                 <constraint firstItem="ubE-jD-pmD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="e2T-mq-xER"/>
                 <constraint firstAttribute="bottom" secondItem="ubE-jD-pmD" secondAttribute="bottom" id="pQF-nP-At8"/>
             </constraints>
-            <point key="canvasLocation" x="240" y="209"/>
+            <point key="canvasLocation" x="282" y="204"/>
         </view>
     </objects>
 </document>

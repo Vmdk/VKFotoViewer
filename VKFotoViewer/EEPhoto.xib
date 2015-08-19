@@ -34,7 +34,7 @@
                     <exclude reference="ozu-wb-k9U"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="235" y="192"/>
+            <point key="canvasLocation" x="362" y="161"/>
         </view>
     </objects>
 </document>
