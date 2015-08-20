@@ -31,6 +31,7 @@
     return res;
 }
 
+//returns photo_130
 - (UIImage *)getSmallPhoto {
     return [self createPhoto:_130];
 }

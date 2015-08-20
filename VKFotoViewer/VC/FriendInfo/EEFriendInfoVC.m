@@ -34,11 +34,6 @@
     _id = ind;
 }
 
-- (void)initPhoto:(NSString*)photoURL {
-    NSData *data =[[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:photoURL]];
-    _photo.image = [UIImage imageWithData:data];
-}
-
 #pragma mark - Table realization
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

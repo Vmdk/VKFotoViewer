@@ -20,13 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _Photos = [NSArray array];
-    
-    //[_Collection registerClass:[EEPhotoCell class] forCellWithReuseIdentifier:@"PhotoCell"];
     [_Collection registerNib:[UINib nibWithNibName:NSStringFromClass([EEPhotoCell class]) bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"PhotoCell"];
-//    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-//    [flowLayout setItemSize:CGSizeMake(200, 200)];
-//    [flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
-//    [self->_Collection setCollectionViewLayout:flowLayout];
 }
 
 - (void)createAlbum:(NSString *)albId forUser:(NSString*)uId {
@@ -36,12 +30,14 @@
     }];
 }
 
+
+# pragma mark - Collection realization
+
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     EEPhoto *vc = [[EEPhoto alloc] init];
     [vc setPhoto:[(EEResponsePhotoModel*)_Photos[indexPath.row] getLargestPhoto]];
     [self.navigationController pushViewController:vc animated:YES];
 }
-
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return _Photos.count;
@@ -54,6 +50,17 @@
     
     return cell;
     
+}
+
+- (UIEdgeInsets)collectionView:
+(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    return UIEdgeInsetsMake(40, 5, 40, 5); /*top, left, bottom, right*/
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    int cellWidth = _Collection.bounds.size.width/3 - 10;
+    CGSize retval = CGSizeMake(cellWidth, cellWidth);
+    return retval;
 }
 
 @end
