@@ -6,7 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EEAlbum">
             <connections>
-                <outlet property="_Collection" destination="ubE-jD-pmD" id="Wsq-nq-MtQ"/>
+                <outlet property="_Collection" destination="ubE-jD-pmD" id="IM7-9N-Ma7"/>
                 <outlet property="view" destination="iN0-l3-epB" id="CFl-yx-Wn5"/>
             </connections>
         </placeholder>

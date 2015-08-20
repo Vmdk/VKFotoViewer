@@ -43,9 +43,8 @@
             //later add syncro, cheking token's time etc..   TODO
             [[NSUserDefaults standardUserDefaults] synchronize];
         }
-        [self dismissViewControllerAnimated:YES completion:^{
-            [self loginState:YES];
-        }];
+        [self popoverPresentationController];
+        [self loginState:YES];
         
     } else if ([request.URL.absoluteString rangeOfString:@"error"].location != NSNotFound) {
         [self dismissViewControllerAnimated:YES completion:^{
