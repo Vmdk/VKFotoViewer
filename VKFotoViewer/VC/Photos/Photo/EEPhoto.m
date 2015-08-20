@@ -16,6 +16,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _photoView.image = _photo;
+    _photoView.userInteractionEnabled = YES;
 }
-
 @end

@@ -15,6 +15,7 @@
     IBOutlet UILabel *_shortInfo;
     IBOutlet UITableView *_TableWithInfo;
 }
+@property(nonatomic, retain) UIActivityIndicatorView* spinner;
 
 - (void) setId:(NSString*)ind;
 

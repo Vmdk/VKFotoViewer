@@ -12,6 +12,7 @@
 @interface EEAlbum : UIViewController  <UICollectionViewDataSource, UICollectionViewDelegate> {
     IBOutlet UICollectionView *_Collection;
 }
+@property(nonatomic, retain) UIActivityIndicatorView* spinner;
 
 - (void)createAlbum:(NSString*)albId forUser:(NSString*)uId;
 

@@ -21,17 +21,23 @@
     [super viewDidLoad];
     _Photos = [NSArray array];
     [_Collection registerNib:[UINib nibWithNibName:NSStringFromClass([EEPhotoCell class]) bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"PhotoCell"];
+    
+    _spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    [_spinner setCenter:self.view.center];
+    [self.view addSubview:_spinner];
+    [_spinner startAnimating];
 }
 
 - (void)createAlbum:(NSString *)albId forUser:(NSString*)uId {
     [EEProcessor createAlbum:albId forUser:(NSString*)uId withPhotos:^(NSArray* lPhotos){
         _Photos = lPhotos;
         [_Collection reloadData];
+        [_spinner stopAnimating];
     }];
 }
 
 
-# pragma mark - Collection realization
+#pragma mark - Collection realization
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     EEPhoto *vc = [[EEPhoto alloc] init];
@@ -49,7 +55,6 @@
     [cell setPhoto:[(EEResponsePhotoModel*)_Photos[indexPath.row] getSmallPhoto]];
     
     return cell;
-    
 }
 
 - (UIEdgeInsets)collectionView:
