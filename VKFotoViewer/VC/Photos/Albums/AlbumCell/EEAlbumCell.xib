@@ -14,21 +14,36 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i7Q-0O-Uja">
+                        <rect key="frame" x="141" y="8" width="200" height="215"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="200" id="CYd-9H-14D"/>
+                        </constraints>
+                    </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kjw-SE-a7S">
                         <rect key="frame" x="8" y="173" width="467" height="50"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Albums Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIm-Sg-0i4" userLabel="AlbumsName">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIm-Sg-0i4" userLabel="AlbumsName">
                                 <rect key="frame" x="10" y="0.0" width="108" height="50"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Albums Name">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NumOfPhotos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9x-Q2-NYw" userLabel="NumOfPhotos">
                                 <rect key="frame" x="348" y="0.0" width="109" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="QIm-Sg-0i4" secondAttribute="bottom" id="BjJ-PP-yhE"/>
                             <constraint firstItem="QIm-Sg-0i4" firstAttribute="top" secondItem="kjw-SE-a7S" secondAttribute="top" id="KZn-Hq-xyI"/>
@@ -39,13 +54,8 @@
                             <constraint firstItem="QIm-Sg-0i4" firstAttribute="leading" secondItem="kjw-SE-a7S" secondAttribute="leading" constant="10" id="zzw-fB-nFs"/>
                         </constraints>
                     </view>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i7Q-0O-Uja">
-                        <rect key="frame" x="191" y="8" width="100" height="215"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="100" id="CYd-9H-14D"/>
-                        </constraints>
-                    </imageView>
                 </subviews>
+                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstItem="kjw-SE-a7S" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="K98-Oq-nFn"/>
                     <constraint firstItem="i7Q-0O-Uja" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="f1W-XO-BGh"/>

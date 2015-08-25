@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface EEPhoto : UIViewController {
+@interface EEPhoto : UIViewController <UIGestureRecognizerDelegate> {
     IBOutlet UIImageView *_photoView;
 }
 
