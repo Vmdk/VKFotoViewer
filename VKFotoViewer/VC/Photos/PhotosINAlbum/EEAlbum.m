@@ -13,6 +13,10 @@
 #import "EEResponsePhotoModel.h"
 #import "EEFullScreenPhotoView.h"
 
+@interface EEAlbum () <BaseAlbum>
+
+@end
+
 @implementation EEAlbum {
     NSArray* _Photos;
 }
@@ -35,22 +39,11 @@
     }];
 }
 
-- (NSArray*)createAlbumWithFullPhotos {
-    NSMutableArray* res = [NSMutableArray array];
-    for (int i = 0 ; i<_Photos.count; i++) {
-        [res addObject:[(EEResponsePhotoModel*)_Photos[i] getLargestURL]];
-    }
-    return res;
-}
-
 #pragma mark - Collection realization
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    //EEPhoto *vc = [[EEPhoto alloc] init];
-    //[vc setPhoto:[(EEResponsePhotoModel*)_Photos[indexPath.row] getLargestPhoto]];
-    
-    EEFullScreenPhotoView* vc = [[EEFullScreenPhotoView alloc] initWithPhotos:[self createAlbumWithFullPhotos]];
-    
+    EEFullScreenPhotoView* vc = [[EEFullScreenPhotoView alloc] init];
+    vc.baseAlbum = self;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -62,7 +55,6 @@
     static NSString *identifier = @"PhotoCell";    
     EEPhotoCell *cell = (EEPhotoCell *)[collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     [cell setPhoto:[(EEResponsePhotoModel*)_Photos[indexPath.row] getSmallPhoto]];
-    
     return cell;
 }
 
@@ -77,4 +69,17 @@
     return retval;
 }
 
+#pragma mark - BaseAlbum delegates
+
+- (NSArray *)givePhotos {
+    return [self createAlbumWithFullPhotos];
+}
+
+- (NSArray*)createAlbumWithFullPhotos {
+    NSMutableArray* res = [NSMutableArray array];
+    for (int i = 0 ; i<_Photos.count; i++) {
+        [res addObject:[(EEResponsePhotoModel*)_Photos[i] getLargestURL]];
+    }
+    return res;
+}
 @end

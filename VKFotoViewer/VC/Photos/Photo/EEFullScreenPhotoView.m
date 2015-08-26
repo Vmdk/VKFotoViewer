@@ -11,11 +11,17 @@
 
 @implementation EEFullScreenPhotoView {
     NSArray* _photos;
+    BOOL* _zoomed;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [_spinner startAnimating];
     [_Collection registerNib:[UINib nibWithNibName:NSStringFromClass([EEFullPhotoCell class]) bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"FullPhotoCell"];
+    _zoomed = FALSE;
+    
+    _photos = [_baseAlbum givePhotos];
+    [_Collection reloadData];
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
@@ -23,9 +29,8 @@
     [flowLayout setMinimumLineSpacing:0.0f];
     [_Collection setPagingEnabled:YES];
     [_Collection setCollectionViewLayout:flowLayout];
+    [_spinner stopAnimating];
 }
-
-
 
 #pragma mark - Table realization
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {

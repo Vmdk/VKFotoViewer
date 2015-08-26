@@ -32,9 +32,7 @@
         UINavigationController* NavCont = [[UINavigationController alloc] initWithRootViewController:vc];
         _window.rootViewController = NavCont;
     }
-    [_window makeKeyAndVisible];
-    
-   
+    [_window makeKeyAndVisible];   
     
     return YES;
 }

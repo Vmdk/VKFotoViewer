@@ -7,7 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EEFullScreenPhotoView">
             <connections>
                 <outlet property="_Collection" destination="h1X-fb-LE8" id="anu-gF-4Pv"/>
-                <outlet property="_spinner" destination="ovT-K3-7Au" id="H8E-tE-wQz"/>
+                <outlet property="_spinner" destination="ovT-K3-7Au" id="SQu-fb-gVM"/>
                 <outlet property="view" destination="iN0-l3-epB" id="4bb-2L-A9o"/>
             </connections>
         </placeholder>
