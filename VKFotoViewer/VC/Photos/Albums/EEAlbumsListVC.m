@@ -13,7 +13,6 @@
 
 @implementation EEAlbumsListVC {
     NSArray* _albums;
-    UIActivityIndicatorView* _spinner;
 }
 
 - (void)viewDidLoad {
@@ -21,10 +20,8 @@
     self.title = @"Albums";
     
     [_albumsList registerNib:[UINib nibWithNibName:NSStringFromClass([EEAlbumCell class]) bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"AlbumCell"];
+    _albumsList.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
-    _spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    [_spinner setCenter:CGPointMake(self.view.bounds.size.width/2.0, self.view.bounds.size.height/2.0)];
-    [self.view addSubview:_spinner];
     [_spinner startAnimating];
 }
 

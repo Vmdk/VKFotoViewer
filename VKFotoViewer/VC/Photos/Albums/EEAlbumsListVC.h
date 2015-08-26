@@ -11,6 +11,7 @@
 
 @interface EEAlbumsListVC : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     IBOutlet UITableView *_albumsList;
+    IBOutlet UIActivityIndicatorView* _spinner;
 }
 
 - (void)prepareInfoFor:(NSString*)uId;

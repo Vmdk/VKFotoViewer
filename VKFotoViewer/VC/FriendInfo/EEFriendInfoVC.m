@@ -21,10 +21,6 @@
     [super viewDidLoad];
     self.title = @"Information";
     
-    _spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    [_spinner setCenter:self.view.center];
-    [self.view addSubview:_spinner];
-    [NSThread detachNewThreadSelector: @selector(Start) toTarget:self withObject:nil];
     [_spinner startAnimating];
     [EEProcessor friendId:_id fillInfo:^(EEResponseUserModel* user) {
         _photo.image = user.userPhoto;
@@ -34,17 +30,12 @@
         [_TableWithInfo reloadData];
         [_spinner stopAnimating];
     }];
+    _TableWithInfo.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 - (void)setId:(NSString *)ind {
     _id = ind;
-}
-
-- (void)Start
-{
-    _spinner.hidden = NO;
-    [_spinner startAnimating];
 }
 
 #pragma mark - Table realization

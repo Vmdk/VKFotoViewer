@@ -37,5 +37,10 @@
             </variation>
             <point key="canvasLocation" x="362" y="161"/>
         </view>
+        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="RQF-Mp-Dj7">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <point key="canvasLocation" x="1023" y="160"/>
+        </scrollView>
     </objects>
 </document>

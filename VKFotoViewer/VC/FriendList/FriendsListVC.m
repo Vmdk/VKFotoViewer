@@ -28,6 +28,7 @@
     // Do any additional setup after loading the view.
     self.title = @"Friends";
     [self setFriends:[EERequest friendRequest]];
+    _friendsList.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 - (void)didReceiveMemoryWarning {

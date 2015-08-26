@@ -22,9 +22,6 @@
     _Photos = [NSArray array];
     [_Collection registerNib:[UINib nibWithNibName:NSStringFromClass([EEPhotoCell class]) bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"PhotoCell"];
     
-    _spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    [_spinner setCenter:self.view.center];
-    [self.view addSubview:_spinner];
     [_spinner startAnimating];
 }
 
@@ -33,6 +30,7 @@
         _Photos = lPhotos;
         [_Collection reloadData];
         [_spinner stopAnimating];
+        _spinner.hidesWhenStopped = TRUE;
     }];
 }
 

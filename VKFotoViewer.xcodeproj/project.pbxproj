@@ -28,6 +28,7 @@
 		E1CD4A471B7A341B000D8D98 /* EEPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD4A451B7A341B000D8D98 /* EEPhotoCell.m */; };
 		E1CD4A481B7A341B000D8D98 /* EEPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1CD4A461B7A341B000D8D98 /* EEPhotoCell.xib */; };
 		E1CD4A4A1B7A382A000D8D98 /* EEAlbum.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1CD4A491B7A382A000D8D98 /* EEAlbum.xib */; };
+		E1EC5C231B8DBAFD007BA90F /* EEPhotoScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1EC5C221B8DBAFD007BA90F /* EEPhotoScrollView.m */; };
 		E1EF3C7A1B46F9CC00D0259F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1EF3C791B46F9CC00D0259F /* main.m */; };
 		E1EF3C7D1B46F9CC00D0259F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1EF3C7C1B46F9CC00D0259F /* AppDelegate.m */; };
 		E1EF3C851B46F9CC00D0259F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1EF3C841B46F9CC00D0259F /* Images.xcassets */; };
@@ -86,6 +87,8 @@
 		E1CD4A451B7A341B000D8D98 /* EEPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EEPhotoCell.m; path = VC/Photos/PhotosINAlbum/PhotoCell/EEPhotoCell.m; sourceTree = "<group>"; };
 		E1CD4A461B7A341B000D8D98 /* EEPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EEPhotoCell.xib; path = VC/Photos/PhotosINAlbum/PhotoCell/EEPhotoCell.xib; sourceTree = "<group>"; };
 		E1CD4A491B7A382A000D8D98 /* EEAlbum.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EEAlbum.xib; sourceTree = "<group>"; };
+		E1EC5C211B8DBAFD007BA90F /* EEPhotoScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EEPhotoScrollView.h; path = VC/Photos/Photo/EEPhotoScrollView.h; sourceTree = "<group>"; };
+		E1EC5C221B8DBAFD007BA90F /* EEPhotoScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EEPhotoScrollView.m; path = VC/Photos/Photo/EEPhotoScrollView.m; sourceTree = "<group>"; };
 		E1EF3C741B46F9CC00D0259F /* VKFotoViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKFotoViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1EF3C781B46F9CC00D0259F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1EF3C791B46F9CC00D0259F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -164,6 +167,8 @@
 				E11DF2861B7B71CA00B27F90 /* EEPhoto.h */,
 				E11DF2871B7B71CA00B27F90 /* EEPhoto.m */,
 				E11DF2891B7B721100B27F90 /* EEPhoto.xib */,
+				E1EC5C211B8DBAFD007BA90F /* EEPhotoScrollView.h */,
+				E1EC5C221B8DBAFD007BA90F /* EEPhotoScrollView.m */,
 			);
 			name = Photo;
 			sourceTree = "<group>";
@@ -532,6 +537,7 @@
 				E11DDFAE1B6D299C00FB99E0 /* LogInView.m in Sources */,
 				E1CD4A471B7A341B000D8D98 /* EEPhotoCell.m in Sources */,
 				E11DF28E1B7B80B400B27F90 /* EEResponsePhotoModel.m in Sources */,
+				E1EC5C231B8DBAFD007BA90F /* EEPhotoScrollView.m in Sources */,
 				E1F526541B73B60100C2FD29 /* EEAlbumCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

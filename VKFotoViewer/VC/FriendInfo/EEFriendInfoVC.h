@@ -14,6 +14,7 @@
     IBOutlet UILabel *_name;
     IBOutlet UILabel *_shortInfo;
     IBOutlet UITableView *_TableWithInfo;
+    IBOutlet UIActivityIndicatorView* _spinner;
 }
 @property(nonatomic, retain) UIActivityIndicatorView* spinner;
 
