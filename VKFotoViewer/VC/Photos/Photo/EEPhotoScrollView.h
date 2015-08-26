@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface EEPhotoScrollView : NSObject
+@interface EEPhotoScrollView : UIViewController <UIScrollViewDelegate> {
+    IBOutlet UIScrollView* _photoScroller;
+}
 
+@property (nonatomic, retain) UIImage* photo;
+- (instancetype)initPhoto:(UIImage*)img;
 @end

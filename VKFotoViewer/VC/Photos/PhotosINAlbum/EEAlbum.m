@@ -11,6 +11,7 @@
 #import "EEPhotoCell.h"
 #import "EEPhoto.h"
 #import "EEResponsePhotoModel.h"
+#import "EEFullScreenPhotoView.h"
 
 @implementation EEAlbum {
     NSArray* _Photos;
@@ -34,12 +35,22 @@
     }];
 }
 
+- (NSArray*)createAlbumWithFullPhotos {
+    NSMutableArray* res = [NSMutableArray array];
+    for (int i = 0 ; i<_Photos.count; i++) {
+        [res addObject:[(EEResponsePhotoModel*)_Photos[i] getLargestURL]];
+    }
+    return res;
+}
 
 #pragma mark - Collection realization
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    EEPhoto *vc = [[EEPhoto alloc] init];
-    [vc setPhoto:[(EEResponsePhotoModel*)_Photos[indexPath.row] getLargestPhoto]];
+    //EEPhoto *vc = [[EEPhoto alloc] init];
+    //[vc setPhoto:[(EEResponsePhotoModel*)_Photos[indexPath.row] getLargestPhoto]];
+    
+    EEFullScreenPhotoView* vc = [[EEFullScreenPhotoView alloc] initWithPhotos:[self createAlbumWithFullPhotos]];
+    
     [self.navigationController pushViewController:vc animated:YES];
 }
 

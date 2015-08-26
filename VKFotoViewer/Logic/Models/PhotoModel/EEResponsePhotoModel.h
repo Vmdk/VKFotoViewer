@@ -19,6 +19,7 @@
     NSString* _description;
 }
 
+- (NSString*)getLargestURL;
 - (instancetype)initWithData:(NSDictionary*)data;
 + (NSArray*)createModelArray:(NSArray*)photos;
 - (UIImage*)getSmallPhoto;

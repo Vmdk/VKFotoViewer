@@ -35,6 +35,24 @@
 - (UIImage *)getSmallPhoto {
     return [self createPhoto:_130];
 }
+-(NSString *)getLargestURL {
+    NSString* temp = _75;
+    if (_130) {
+        temp = _130;
+    }
+    if (_604) {
+        temp = _604;
+    }if (_807) {
+        temp = _807;
+    }
+    if (_1280) {
+        temp = _1280;
+    }
+    if (_2560) {
+        temp = _2560;
+    }
+    return temp;
+}
 
 - (UIImage *)getLargestPhoto {
     NSString* temp = _75;
