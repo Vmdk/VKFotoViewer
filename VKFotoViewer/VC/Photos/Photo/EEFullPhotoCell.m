@@ -16,16 +16,20 @@
     [super awakeFromNib];
     // Initialization code
     _isZoomed = NO;
-    
+    //[self syncronizeFrames];
     UITapGestureRecognizer *doubleTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scrollViewDoubleTapped:)];
     doubleTapRecognizer.numberOfTapsRequired = 2;
     doubleTapRecognizer.numberOfTouchesRequired = 1;
     [_scrollView addGestureRecognizer:doubleTapRecognizer];
     
 }
+- (void)syncronizeFrames {
+    
+}
 
 - (void)layoutSubviews {
     [super layoutSubviews];
+    
 }
 
 - (void)setPhoto:(NSString *)photoURL {
@@ -83,28 +87,51 @@
 #pragma ZoomControllingMethods
 
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView {
+    //CGSize SVContentSize = _scrollView.contentSize;
+    //NSLog([NSString stringWithFormat:@"%f %f %f",SVContentSize.height/ SVContentSize.width, SVContentSize.height, SVContentSize.width ]);
     // The scroll view has zoomed, so we need to re-center the contents
-    [self centerScrollViewContents];
-}
-
-- (void)centerScrollViewContents {
     if (_scrollView.zoomScale > 1.0f) {
         _isZoomed = YES;
+        [self setFrameWhileZoomed];
     }
+    else {
+        _isZoomed = NO;
+    }
+}
+
+- (void)setFrameWhileZoomed {
+    //offset
+    CGPoint currOfs = _scrollView.contentOffset;
+    //size of the device's screen
     CGSize boundsSize = _scrollView.bounds.size;
-    CGRect contentsFrame = _image.frame;
-    if (contentsFrame.size.width < boundsSize.width) {
-        contentsFrame.origin.x = (boundsSize.width - contentsFrame.size.width) / 2.0f;
-    } else {
-        contentsFrame.origin.x = 0.0f;
-    }
+    //size of current ScrollView
+    CGSize SVContentSize = _scrollView.contentSize;
+    NSLog([NSString stringWithFormat:@"%f %f %f",SVContentSize.height/ SVContentSize.width, SVContentSize.height, SVContentSize.width ]);
+    //real photoSize
+    CGSize contentsFrame = _image.image.size;
+    float photoCoef = (contentsFrame.height / contentsFrame.width);
+    float screenCoef = boundsSize.height / boundsSize.width;
+    BOOL lFullHight = ( photoCoef - screenCoef) > 0;
     
-    if (contentsFrame.size.height < boundsSize.height) {
-        contentsFrame.origin.y = (boundsSize.height - contentsFrame.size.height) / 2.0f;
-    } else {
-        contentsFrame.origin.y = 0.0f;
+    
+    // a2 = (x1*y2)/y1 - x1
+    if (lFullHight) {
+        float coefByHeight = contentsFrame.height / boundsSize.height;
+        float lWidthDiffer = (boundsSize.width * coefByHeight) - contentsFrame.width;
+        float lCoef = boundsSize.width / (lWidthDiffer + contentsFrame.width);
+        _scrollView.contentSize = CGSizeMake(contentsFrame.width * lCoef * _scrollView.zoomScale, _scrollView.contentSize.height);
     }
-    _image.frame = contentsFrame;
+    else {
+        float coefByWidth = contentsFrame.width / boundsSize.width;
+        float lHightDiffer = (boundsSize.height * coefByWidth) - contentsFrame.width;
+        float lCoef = boundsSize.height / (lHightDiffer + contentsFrame.height);
+        _scrollView.contentSize = CGSizeMake(SVContentSize.width, lCoef * contentsFrame.height * _scrollView.zoomScale);
+        //_scrollView.contentOffset = CGPointMake(_scrollView.contentOffset.x, _scrollView.contentOffset.y + lCoef * contentsFrame.height);
+        SVContentSize = _scrollView.contentSize;
+        NSLog([NSString stringWithFormat:@"%f %f %f",SVContentSize.height/ SVContentSize.width, SVContentSize.height, SVContentSize.width ]);
+        currOfs = _scrollView.contentOffset;
+        NSLog([NSString stringWithFormat:@"%f %f",currOfs.x,currOfs.y ]);
+    }
 }
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
