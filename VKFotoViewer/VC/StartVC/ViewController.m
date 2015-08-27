@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "LogInView.h"
+#import "LogInVC.h"
 #import "FriendsListVC.h"
 #import "EERequest.h"
 
@@ -29,7 +29,7 @@
 }
 
 - (IBAction)logInClick:(id)sender {
-    LogInView *logVC = [[LogInView alloc] init];
+    LogInVC *logVC = [[LogInVC alloc] init];
     logVC.baseDelegate = self;
     [self.navigationController pushViewController:logVC animated:YES];
 }

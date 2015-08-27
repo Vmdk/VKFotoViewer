@@ -8,71 +8,70 @@
 
 #import "EEFriendInfoVC.h"
 #import "EERequest.h"
-#import "EELogic.h"
 #import "EEProcessor.h"
 #import "EEResponseUserModel.h"
 
+#define INFORMATION_TABLE_CELL_IDENTIFIER @"identifier"
+#define SECTION_HEIGHT 50.0f
+
 @implementation EEFriendInfoVC {
-    NSString *_id;
-    NSDictionary* _tableData;
+    NSDictionary* _tableInformation;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self fillViewWithUserInfo];
+}
+
+- (void)fillViewWithUserInfo {
     self.title = @"Information";
-    
     [_spinner startAnimating];
-    [EEProcessor friendId:_id fillInfo:^(EEResponseUserModel* user) {
+    [EEProcessor friendId:_friendId fillInfo:^(EEResponseUserModel* user) {
         _photo.image = user.userPhoto;
         _name.text = user.name;
         _shortInfo.text = @"";
-        _tableData = user.tableInfo;
-        [_TableWithInfo reloadData];
+        _tableInformation = user.tableInfo;
+        [_tableWithUserInfo reloadData];
         [_spinner stopAnimating];
     }];
-    _TableWithInfo.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    self.automaticallyAdjustsScrollViewInsets = NO;
-}
-
-- (void)setId:(NSString *)ind {
-    _id = ind;
+    _tableWithUserInfo.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 #pragma mark - Table realization
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (!_tableData) {
+    if (!_tableInformation) {
         return 0;
     }
     else {
-        NSArray *keys = [_tableData allKeys];
+        NSArray *keys = [_tableInformation allKeys];
         NSString *curentKey = [keys objectAtIndex:section];
-        NSArray *curentInfo = [_tableData objectForKey:curentKey];
+        NSArray *curentInfo = [_tableInformation objectForKey:curentKey];
         return curentInfo.count;
     }
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 50.0f;
+    return SECTION_HEIGHT;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    if (!_tableData) {
+    if (!_tableInformation) {
         return 0;
     }
     else
-        return _tableData.count;
+        return _tableInformation.count;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return [[_tableData allKeys] objectAtIndex:section];
+    return [[_tableInformation allKeys] objectAtIndex:section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *lCell = [tableView dequeueReusableCellWithIdentifier:@"identifier"];
+    UITableViewCell *lCell = [tableView dequeueReusableCellWithIdentifier:INFORMATION_TABLE_CELL_IDENTIFIER];
     if (lCell == nil) {
-        lCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"identifier"];
+        lCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:INFORMATION_TABLE_CELL_IDENTIFIER];
     }
-    NSArray *curentInfo = [_tableData objectForKey:[[_tableData allKeys] objectAtIndex:indexPath.section]];
+    NSArray *curentInfo = [_tableInformation objectForKey:[[_tableInformation allKeys] objectAtIndex:indexPath.section]];
     lCell.textLabel.text = [curentInfo objectAtIndex:indexPath.row];
     return lCell;
 }

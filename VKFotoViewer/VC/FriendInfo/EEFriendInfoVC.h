@@ -13,11 +13,9 @@
     IBOutlet UIImageView *_photo;
     IBOutlet UILabel *_name;
     IBOutlet UILabel *_shortInfo;
-    IBOutlet UITableView *_TableWithInfo;
+    IBOutlet UITableView *_tableWithUserInfo;
     IBOutlet UIActivityIndicatorView* _spinner;
 }
-@property(nonatomic, retain) UIActivityIndicatorView* spinner;
-
-- (void) setId:(NSString*)ind;
+@property(nonatomic, weak) NSString* friendId;
 
 @end

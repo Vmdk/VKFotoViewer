@@ -13,7 +13,7 @@
 - (void)LogInViewDelegateLoginState:(BOOL)state;
 @end
 
-@interface LogInView : UIViewController <UIWebViewDelegate> {
+@interface LogInVC : UIViewController <UIWebViewDelegate> {
 }
 
 @property (strong, nonatomic) IBOutlet UIWebView *myBrowser;

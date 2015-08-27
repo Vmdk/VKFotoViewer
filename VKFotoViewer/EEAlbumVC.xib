@@ -4,9 +4,9 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EEAlbum">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EEAlbumVC">
             <connections>
-                <outlet property="_Collection" destination="ubE-jD-pmD" id="IM7-9N-Ma7"/>
+                <outlet property="_collection" destination="ubE-jD-pmD" id="z9S-0b-eTj"/>
                 <outlet property="_spinner" destination="Jdw-4F-CRp" id="EeN-JS-jbV"/>
                 <outlet property="view" destination="iN0-l3-epB" id="CFl-yx-Wn5"/>
             </connections>

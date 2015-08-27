@@ -11,21 +11,21 @@
 #import "EEFriendInfoVC.h"
 #import "EEAlbumsListVC.h"
 
+#define CELL_FOR_FRIEND_IDENTIFIER @"identifier"
+
 @interface FriendsListVC ()
 
 @end
 
-//TODO 1
 @implementation FriendsListVC {
     NSArray *_friendsId;
     NSMutableArray *_names;
-    int _rows;
-    BOOL _all;
+    NSInteger _rowsShown;
+    BOOL _areAllFriendsShown;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     self.title = @"Friends";
     [self setFriends:[EERequest friendRequest]];
     _friendsList.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
@@ -37,21 +37,19 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (_names.count<15) {
-        return _names.count;
+    if (_names.count < 15) {
+        _rowsShown = _names.count;
     }
-    if(!_rows) {
-        _rows = 15;
+    if(!_rowsShown) {
+        _rowsShown = 15;
     }
-    return _rows;
+    return _rowsShown;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if(indexPath.row == _rows) {
-    }
-    UITableViewCell *lCell = [tableView dequeueReusableCellWithIdentifier:@"identifier"];
+    UITableViewCell *lCell = [tableView dequeueReusableCellWithIdentifier:CELL_FOR_FRIEND_IDENTIFIER];
     if (lCell == nil) {
-        lCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"identifier"];
+        lCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CELL_FOR_FRIEND_IDENTIFIER];
         lCell.accessoryType = UITableViewCellAccessoryDetailButton;
     }
     lCell.textLabel.text = [_names objectAtIndex:indexPath.row];
@@ -66,31 +64,31 @@
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
     EEFriendInfoVC *vc = [[EEFriendInfoVC alloc] init];
-    [vc setId:_friendsId[indexPath.row]];
+    vc.friendId = _friendsId[indexPath.row];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row==_rows - 1 && !_all) {
+    if (indexPath.row == _rowsShown - 1 && !_areAllFriendsShown) {
         [self uploadFriends];
     }
 }
 
 - (void)uploadFriends {
-    if(_rows+15>_friendsId.count) {
-        for (int i = _rows; i<_friendsId.count; ++i) {
+    if(_rowsShown + 15 > _friendsId.count) {
+        for (NSInteger i = _rowsShown; i < _friendsId.count; ++i) {
             _names[i] = [EERequest getNameForId:_friendsId[i]];
         }
-        _rows = (int)_friendsId.count;
-        _all = true;
+        _rowsShown = (int)_friendsId.count;
+        _areAllFriendsShown = true;
     }
     else {
-        for (int i = _rows; i<_rows+15; ++i) {
+        for (NSInteger i = _rowsShown; i < _rowsShown+15; ++i) {
             _names[i] = [EERequest getNameForId:_friendsId[i]];
         }
-        _all = false;
-        _rows+=15;
+        _areAllFriendsShown = false;
+        _rowsShown += 15;
     }
     [_friendsList reloadData];
 }
@@ -99,14 +97,14 @@
     _friendsId = arr;
     _names = [NSMutableArray array];
     int limit = 15;
-    if (arr.count<15) {
+    if (arr.count < 15) {
         limit = (int)arr.count;
-        _all = true;
+        _areAllFriendsShown = true;
     }
-    for (int i = 0; i<limit; ++i) {
+    for (int i = 0; i < limit; ++i) {
         _names[i] = [EERequest getNameForId:arr[i]];
     }
-    _all = false;
+    _areAllFriendsShown = false;
     [_friendsList reloadData];
 }
 

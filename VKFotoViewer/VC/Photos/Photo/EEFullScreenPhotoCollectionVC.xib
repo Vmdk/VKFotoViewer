@@ -4,9 +4,9 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EEFullScreenPhotoView">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EEFullScreenPhotoCollectionVC">
             <connections>
-                <outlet property="_Collection" destination="h1X-fb-LE8" id="anu-gF-4Pv"/>
+                <outlet property="_collection" destination="h1X-fb-LE8" id="fDo-nn-gg9"/>
                 <outlet property="_spinner" destination="ovT-K3-7Au" id="SQu-fb-gVM"/>
                 <outlet property="view" destination="iN0-l3-epB" id="4bb-2L-A9o"/>
             </connections>
@@ -16,9 +16,9 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="h1X-fb-LE8">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="h1X-fb-LE8">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qWu-SQ-xbB">
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="5" id="qWu-SQ-xbB">
                         <size key="itemSize" width="50" height="50"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -42,7 +42,7 @@
                 <constraint firstItem="h1X-fb-LE8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="lKj-Fd-tHF"/>
                 <constraint firstAttribute="bottom" secondItem="h1X-fb-LE8" secondAttribute="bottom" id="pkV-Bt-S79"/>
             </constraints>
-            <point key="canvasLocation" x="261" y="193"/>
+            <point key="canvasLocation" x="285" y="212"/>
         </view>
     </objects>
 </document>

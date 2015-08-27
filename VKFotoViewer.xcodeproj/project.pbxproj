@@ -9,28 +9,24 @@
 /* Begin PBXBuildFile section */
 		8F32792506B86BDD3E9F8C96 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA3EE3DC9BF1D5AF2A48B6E7 /* libPods.a */; };
 		E114C1221B8DC65A002F6D05 /* EEPhotoScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E114C1211B8DC65A002F6D05 /* EEPhotoScrollView.xib */; };
-		E114C1261B8DD8FF002F6D05 /* EEFullScreenPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = E114C1251B8DD8FF002F6D05 /* EEFullScreenPhotoView.m */; };
-		E114C1291B8DD962002F6D05 /* EEFullScreenPhotoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E114C1281B8DD962002F6D05 /* EEFullScreenPhotoView.xib */; };
+		E114C1261B8DD8FF002F6D05 /* EEFullScreenPhotoCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E114C1251B8DD8FF002F6D05 /* EEFullScreenPhotoCollectionVC.m */; };
+		E114C1291B8DD962002F6D05 /* EEFullScreenPhotoCollectionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E114C1281B8DD962002F6D05 /* EEFullScreenPhotoCollectionVC.xib */; };
 		E11DDF871B6D27B200FB99E0 /* EEProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = E11DDF861B6D27B200FB99E0 /* EEProcessor.m */; };
 		E11DDFA41B6D297400FB99E0 /* EEFriendInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E11DDFA21B6D297400FB99E0 /* EEFriendInfoVC.m */; };
 		E11DDFA51B6D297400FB99E0 /* EEFriendInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E11DDFA31B6D297400FB99E0 /* EEFriendInfoVC.xib */; };
 		E11DDFA91B6D298900FB99E0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E11DDFA71B6D298900FB99E0 /* ViewController.m */; };
 		E11DDFAA1B6D298900FB99E0 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E11DDFA81B6D298900FB99E0 /* ViewController.xib */; };
-		E11DDFAE1B6D299C00FB99E0 /* LogInView.m in Sources */ = {isa = PBXBuildFile; fileRef = E11DDFAC1B6D299C00FB99E0 /* LogInView.m */; };
-		E11DDFAF1B6D299C00FB99E0 /* LogInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E11DDFAD1B6D299C00FB99E0 /* LogInView.xib */; };
+		E11DDFAE1B6D299C00FB99E0 /* LogInVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E11DDFAC1B6D299C00FB99E0 /* LogInVC.m */; };
+		E11DDFAF1B6D299C00FB99E0 /* LogInVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E11DDFAD1B6D299C00FB99E0 /* LogInVC.xib */; };
 		E11DDFB31B6D29B000FB99E0 /* FriendsListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E11DDFB11B6D29B000FB99E0 /* FriendsListVC.m */; };
 		E11DDFB41B6D29B000FB99E0 /* FriendsListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E11DDFB21B6D29B000FB99E0 /* FriendsListVC.xib */; };
 		E11DDFB71B6D29C600FB99E0 /* EERequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E11DDFB61B6D29C600FB99E0 /* EERequest.m */; };
-		E11DDFBE1B6D29E600FB99E0 /* EEInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E11DDFBA1B6D29E600FB99E0 /* EEInfo.m */; };
-		E11DDFBF1B6D29E600FB99E0 /* EELogic.m in Sources */ = {isa = PBXBuildFile; fileRef = E11DDFBC1B6D29E600FB99E0 /* EELogic.m */; };
-		E11DF2881B7B71CA00B27F90 /* EEPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = E11DF2871B7B71CA00B27F90 /* EEPhoto.m */; };
-		E11DF28A1B7B721100B27F90 /* EEPhoto.xib in Resources */ = {isa = PBXBuildFile; fileRef = E11DF2891B7B721100B27F90 /* EEPhoto.xib */; };
 		E11DF28E1B7B80B400B27F90 /* EEResponsePhotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E11DF28D1B7B80B400B27F90 /* EEResponsePhotoModel.m */; };
 		E14FA5F41B84B24300EF5956 /* EEResponseUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E14FA5F31B84B24300EF5956 /* EEResponseUserModel.m */; };
-		E1CD4A401B7A0D60000D8D98 /* EEAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD4A3F1B7A0D60000D8D98 /* EEAlbum.m */; };
+		E1CD4A401B7A0D60000D8D98 /* EEAlbumVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD4A3F1B7A0D60000D8D98 /* EEAlbumVC.m */; };
 		E1CD4A471B7A341B000D8D98 /* EEPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD4A451B7A341B000D8D98 /* EEPhotoCell.m */; };
 		E1CD4A481B7A341B000D8D98 /* EEPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1CD4A461B7A341B000D8D98 /* EEPhotoCell.xib */; };
-		E1CD4A4A1B7A382A000D8D98 /* EEAlbum.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1CD4A491B7A382A000D8D98 /* EEAlbum.xib */; };
+		E1CD4A4A1B7A382A000D8D98 /* EEAlbumVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1CD4A491B7A382A000D8D98 /* EEAlbumVC.xib */; };
 		E1EA05ED1B8DDB8800A9428F /* EEFullPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1EA05EB1B8DDB8800A9428F /* EEFullPhotoCell.m */; };
 		E1EA05EE1B8DDB8800A9428F /* EEFullPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1EA05EC1B8DDB8800A9428F /* EEFullPhotoCell.xib */; };
 		E1EC5C231B8DBAFD007BA90F /* EEPhotoScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1EC5C221B8DBAFD007BA90F /* EEPhotoScrollView.m */; };
@@ -60,9 +56,9 @@
 		AA3EE3DC9BF1D5AF2A48B6E7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF515E58F871453601BBCF8B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E114C1211B8DC65A002F6D05 /* EEPhotoScrollView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EEPhotoScrollView.xib; path = VC/Photos/Photo/EEPhotoScrollView.xib; sourceTree = "<group>"; };
-		E114C1241B8DD8FF002F6D05 /* EEFullScreenPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EEFullScreenPhotoView.h; path = VC/Photos/Photo/EEFullScreenPhotoView.h; sourceTree = "<group>"; };
-		E114C1251B8DD8FF002F6D05 /* EEFullScreenPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EEFullScreenPhotoView.m; path = VC/Photos/Photo/EEFullScreenPhotoView.m; sourceTree = "<group>"; };
-		E114C1281B8DD962002F6D05 /* EEFullScreenPhotoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EEFullScreenPhotoView.xib; path = VC/Photos/Photo/EEFullScreenPhotoView.xib; sourceTree = "<group>"; };
+		E114C1241B8DD8FF002F6D05 /* EEFullScreenPhotoCollectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EEFullScreenPhotoCollectionVC.h; path = VC/Photos/Photo/EEFullScreenPhotoCollectionVC.h; sourceTree = "<group>"; };
+		E114C1251B8DD8FF002F6D05 /* EEFullScreenPhotoCollectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EEFullScreenPhotoCollectionVC.m; path = VC/Photos/Photo/EEFullScreenPhotoCollectionVC.m; sourceTree = "<group>"; };
+		E114C1281B8DD962002F6D05 /* EEFullScreenPhotoCollectionVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EEFullScreenPhotoCollectionVC.xib; path = VC/Photos/Photo/EEFullScreenPhotoCollectionVC.xib; sourceTree = "<group>"; };
 		E11DDF851B6D27B200FB99E0 /* EEProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EEProcessor.h; path = Logic/Processor/EEProcessor.h; sourceTree = "<group>"; };
 		E11DDF861B6D27B200FB99E0 /* EEProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EEProcessor.m; path = Logic/Processor/EEProcessor.m; sourceTree = "<group>"; };
 		E11DDFA11B6D297400FB99E0 /* EEFriendInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EEFriendInfoVC.h; path = VC/FriendInfo/EEFriendInfoVC.h; sourceTree = "<group>"; };
@@ -71,31 +67,24 @@
 		E11DDFA61B6D298900FB99E0 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = VC/StartVC/ViewController.h; sourceTree = "<group>"; };
 		E11DDFA71B6D298900FB99E0 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = VC/StartVC/ViewController.m; sourceTree = "<group>"; };
 		E11DDFA81B6D298900FB99E0 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewController.xib; path = VC/StartVC/ViewController.xib; sourceTree = "<group>"; };
-		E11DDFAB1B6D299C00FB99E0 /* LogInView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LogInView.h; path = VC/Authorization/LogInView.h; sourceTree = "<group>"; };
-		E11DDFAC1B6D299C00FB99E0 /* LogInView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LogInView.m; path = VC/Authorization/LogInView.m; sourceTree = "<group>"; };
-		E11DDFAD1B6D299C00FB99E0 /* LogInView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LogInView.xib; path = VC/Authorization/LogInView.xib; sourceTree = "<group>"; };
+		E11DDFAB1B6D299C00FB99E0 /* LogInVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LogInVC.h; path = VC/Authorization/LogInVC.h; sourceTree = "<group>"; };
+		E11DDFAC1B6D299C00FB99E0 /* LogInVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LogInVC.m; path = VC/Authorization/LogInVC.m; sourceTree = "<group>"; };
+		E11DDFAD1B6D299C00FB99E0 /* LogInVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LogInVC.xib; path = VC/Authorization/LogInVC.xib; sourceTree = "<group>"; };
 		E11DDFB01B6D29B000FB99E0 /* FriendsListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FriendsListVC.h; path = VC/FriendList/FriendsListVC.h; sourceTree = "<group>"; };
 		E11DDFB11B6D29B000FB99E0 /* FriendsListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FriendsListVC.m; path = VC/FriendList/FriendsListVC.m; sourceTree = "<group>"; };
 		E11DDFB21B6D29B000FB99E0 /* FriendsListVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FriendsListVC.xib; path = VC/FriendList/FriendsListVC.xib; sourceTree = "<group>"; };
 		E11DDFB51B6D29C600FB99E0 /* EERequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EERequest.h; path = Logic/Requests/EERequest.h; sourceTree = "<group>"; };
 		E11DDFB61B6D29C600FB99E0 /* EERequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EERequest.m; path = Logic/Requests/EERequest.m; sourceTree = "<group>"; };
-		E11DDFB91B6D29E600FB99E0 /* EEInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EEInfo.h; path = Logic/EEInfo.h; sourceTree = "<group>"; };
-		E11DDFBA1B6D29E600FB99E0 /* EEInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EEInfo.m; path = Logic/EEInfo.m; sourceTree = "<group>"; };
-		E11DDFBB1B6D29E600FB99E0 /* EELogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EELogic.h; path = Logic/EELogic.h; sourceTree = "<group>"; };
-		E11DDFBC1B6D29E600FB99E0 /* EELogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EELogic.m; path = Logic/EELogic.m; sourceTree = "<group>"; };
-		E11DF2861B7B71CA00B27F90 /* EEPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EEPhoto.h; path = VC/Photos/Photo/EEPhoto.h; sourceTree = "<group>"; };
-		E11DF2871B7B71CA00B27F90 /* EEPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EEPhoto.m; path = VC/Photos/Photo/EEPhoto.m; sourceTree = "<group>"; };
-		E11DF2891B7B721100B27F90 /* EEPhoto.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EEPhoto.xib; sourceTree = "<group>"; };
 		E11DF28C1B7B80B400B27F90 /* EEResponsePhotoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EEResponsePhotoModel.h; path = Logic/Models/PhotoModel/EEResponsePhotoModel.h; sourceTree = "<group>"; };
 		E11DF28D1B7B80B400B27F90 /* EEResponsePhotoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EEResponsePhotoModel.m; path = Logic/Models/PhotoModel/EEResponsePhotoModel.m; sourceTree = "<group>"; };
 		E14FA5F21B84B24300EF5956 /* EEResponseUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EEResponseUserModel.h; path = Logic/Models/UserModel/EEResponseUserModel.h; sourceTree = "<group>"; };
 		E14FA5F31B84B24300EF5956 /* EEResponseUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EEResponseUserModel.m; path = Logic/Models/UserModel/EEResponseUserModel.m; sourceTree = "<group>"; };
-		E1CD4A3E1B7A0D60000D8D98 /* EEAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EEAlbum.h; path = VC/Photos/PhotosINAlbum/EEAlbum.h; sourceTree = "<group>"; };
-		E1CD4A3F1B7A0D60000D8D98 /* EEAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EEAlbum.m; path = VC/Photos/PhotosINAlbum/EEAlbum.m; sourceTree = "<group>"; };
+		E1CD4A3E1B7A0D60000D8D98 /* EEAlbumVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EEAlbumVC.h; path = VC/Photos/PhotosINAlbum/EEAlbumVC.h; sourceTree = "<group>"; };
+		E1CD4A3F1B7A0D60000D8D98 /* EEAlbumVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EEAlbumVC.m; path = VC/Photos/PhotosINAlbum/EEAlbumVC.m; sourceTree = "<group>"; };
 		E1CD4A441B7A341B000D8D98 /* EEPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EEPhotoCell.h; path = VC/Photos/PhotosINAlbum/PhotoCell/EEPhotoCell.h; sourceTree = "<group>"; };
 		E1CD4A451B7A341B000D8D98 /* EEPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EEPhotoCell.m; path = VC/Photos/PhotosINAlbum/PhotoCell/EEPhotoCell.m; sourceTree = "<group>"; };
 		E1CD4A461B7A341B000D8D98 /* EEPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EEPhotoCell.xib; path = VC/Photos/PhotosINAlbum/PhotoCell/EEPhotoCell.xib; sourceTree = "<group>"; };
-		E1CD4A491B7A382A000D8D98 /* EEAlbum.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EEAlbum.xib; sourceTree = "<group>"; };
+		E1CD4A491B7A382A000D8D98 /* EEAlbumVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EEAlbumVC.xib; sourceTree = "<group>"; };
 		E1EA05EA1B8DDB8800A9428F /* EEFullPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EEFullPhotoCell.h; path = VC/Photos/Photo/EEFullPhotoCell.h; sourceTree = "<group>"; };
 		E1EA05EB1B8DDB8800A9428F /* EEFullPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EEFullPhotoCell.m; path = VC/Photos/Photo/EEFullPhotoCell.m; sourceTree = "<group>"; };
 		E1EA05EC1B8DDB8800A9428F /* EEFullPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EEFullPhotoCell.xib; path = VC/Photos/Photo/EEFullPhotoCell.xib; sourceTree = "<group>"; };
@@ -158,9 +147,6 @@
 		E114C1271B8DD904002F6D05 /* Olds */ = {
 			isa = PBXGroup;
 			children = (
-				E11DF2861B7B71CA00B27F90 /* EEPhoto.h */,
-				E11DF2871B7B71CA00B27F90 /* EEPhoto.m */,
-				E11DF2891B7B721100B27F90 /* EEPhoto.xib */,
 				E1EC5C211B8DBAFD007BA90F /* EEPhotoScrollView.h */,
 				E1EC5C221B8DBAFD007BA90F /* EEPhotoScrollView.m */,
 				E114C1211B8DC65A002F6D05 /* EEPhotoScrollView.xib */,
@@ -200,9 +186,9 @@
 			isa = PBXGroup;
 			children = (
 				E114C1271B8DD904002F6D05 /* Olds */,
-				E114C1241B8DD8FF002F6D05 /* EEFullScreenPhotoView.h */,
-				E114C1251B8DD8FF002F6D05 /* EEFullScreenPhotoView.m */,
-				E114C1281B8DD962002F6D05 /* EEFullScreenPhotoView.xib */,
+				E114C1241B8DD8FF002F6D05 /* EEFullScreenPhotoCollectionVC.h */,
+				E114C1251B8DD8FF002F6D05 /* EEFullScreenPhotoCollectionVC.m */,
+				E114C1281B8DD962002F6D05 /* EEFullScreenPhotoCollectionVC.xib */,
 				E114C12A1B8DD9C6002F6D05 /* FullPhotoCell */,
 			);
 			name = Photo;
@@ -235,16 +221,30 @@
 			name = UserModel;
 			sourceTree = "<group>";
 		};
+		E165FFD41B8F2AE200516332 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				E1A37D561B57F60F00933508 /* FriendList */,
+				E1E362561B5AB31400DBF8C8 /* FriendInfo */,
+			);
+			name = Friends;
+			sourceTree = "<group>";
+		};
+		E165FFD51B8F2B4800516332 /* Begin */ = {
+			isa = PBXGroup;
+			children = (
+				E1A37D581B57F69100933508 /* StartVC */,
+				E1A37D571B57F66E00933508 /* Authorization */,
+			);
+			name = Begin;
+			sourceTree = "<group>";
+		};
 		E1990C301B529CCD00722250 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
 				E11DDF831B6D274300FB99E0 /* Requests */,
 				E11DF28B1B7B805B00B27F90 /* Models */,
 				E11DDF841B6D276300FB99E0 /* Processor */,
-				E11DDFB91B6D29E600FB99E0 /* EEInfo.h */,
-				E11DDFBA1B6D29E600FB99E0 /* EEInfo.m */,
-				E11DDFBB1B6D29E600FB99E0 /* EELogic.h */,
-				E11DDFBC1B6D29E600FB99E0 /* EELogic.m */,
 			);
 			name = Logic;
 			sourceTree = "<group>";
@@ -262,9 +262,9 @@
 		E1A37D571B57F66E00933508 /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
-				E11DDFAB1B6D299C00FB99E0 /* LogInView.h */,
-				E11DDFAC1B6D299C00FB99E0 /* LogInView.m */,
-				E11DDFAD1B6D299C00FB99E0 /* LogInView.xib */,
+				E11DDFAB1B6D299C00FB99E0 /* LogInVC.h */,
+				E11DDFAC1B6D299C00FB99E0 /* LogInVC.m */,
+				E11DDFAD1B6D299C00FB99E0 /* LogInVC.xib */,
 			);
 			name = Authorization;
 			sourceTree = "<group>";
@@ -282,11 +282,9 @@
 		E1A3FFA51B52CF5B00105E66 /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				E165FFD51B8F2B4800516332 /* Begin */,
+				E165FFD41B8F2AE200516332 /* Friends */,
 				E1F526491B73AA3800C2FD29 /* Photos */,
-				E1A37D581B57F69100933508 /* StartVC */,
-				E1A37D571B57F66E00933508 /* Authorization */,
-				E1A37D561B57F60F00933508 /* FriendList */,
-				E1E362561B5AB31400DBF8C8 /* FriendInfo */,
 			);
 			name = VC;
 			sourceTree = "<group>";
@@ -294,9 +292,9 @@
 		E1CD4A3D1B7A0D0F000D8D98 /* PhotosInAlbum */ = {
 			isa = PBXGroup;
 			children = (
-				E1CD4A3E1B7A0D60000D8D98 /* EEAlbum.h */,
-				E1CD4A3F1B7A0D60000D8D98 /* EEAlbum.m */,
-				E1CD4A491B7A382A000D8D98 /* EEAlbum.xib */,
+				E1CD4A3E1B7A0D60000D8D98 /* EEAlbumVC.h */,
+				E1CD4A3F1B7A0D60000D8D98 /* EEAlbumVC.m */,
+				E1CD4A491B7A382A000D8D98 /* EEAlbumVC.xib */,
 				E1CD4A431B7A33D5000D8D98 /* PhotoCell */,
 			);
 			name = PhotosInAlbum;
@@ -498,14 +496,13 @@
 				E114C1221B8DC65A002F6D05 /* EEPhotoScrollView.xib in Resources */,
 				E1CD4A481B7A341B000D8D98 /* EEPhotoCell.xib in Resources */,
 				E1F5264F1B73AB7000C2FD29 /* EEAlbumsListVC.xib in Resources */,
-				E11DF28A1B7B721100B27F90 /* EEPhoto.xib in Resources */,
-				E114C1291B8DD962002F6D05 /* EEFullScreenPhotoView.xib in Resources */,
+				E114C1291B8DD962002F6D05 /* EEFullScreenPhotoCollectionVC.xib in Resources */,
 				E1EF3C881B46F9CC00D0259F /* LaunchScreen.xib in Resources */,
 				E11DDFA51B6D297400FB99E0 /* EEFriendInfoVC.xib in Resources */,
 				E1F526551B73B60100C2FD29 /* EEAlbumCell.xib in Resources */,
-				E1CD4A4A1B7A382A000D8D98 /* EEAlbum.xib in Resources */,
+				E1CD4A4A1B7A382A000D8D98 /* EEAlbumVC.xib in Resources */,
 				E11DDFB41B6D29B000FB99E0 /* FriendsListVC.xib in Resources */,
-				E11DDFAF1B6D299C00FB99E0 /* LogInView.xib in Resources */,
+				E11DDFAF1B6D299C00FB99E0 /* LogInVC.xib in Resources */,
 				E1EA05EE1B8DDB8800A9428F /* EEFullPhotoCell.xib in Resources */,
 				E1EF3C851B46F9CC00D0259F /* Images.xcassets in Resources */,
 				E11DDFAA1B6D298900FB99E0 /* ViewController.xib in Resources */,
@@ -559,22 +556,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E11DDFBE1B6D29E600FB99E0 /* EEInfo.m in Sources */,
-				E1CD4A401B7A0D60000D8D98 /* EEAlbum.m in Sources */,
-				E11DDFBF1B6D29E600FB99E0 /* EELogic.m in Sources */,
+				E1CD4A401B7A0D60000D8D98 /* EEAlbumVC.m in Sources */,
 				E14FA5F41B84B24300EF5956 /* EEResponseUserModel.m in Sources */,
 				E11DDFA41B6D297400FB99E0 /* EEFriendInfoVC.m in Sources */,
 				E1F5264D1B73AAB200C2FD29 /* EEAlbumsListVC.m in Sources */,
-				E114C1261B8DD8FF002F6D05 /* EEFullScreenPhotoView.m in Sources */,
+				E114C1261B8DD8FF002F6D05 /* EEFullScreenPhotoCollectionVC.m in Sources */,
 				E11DDFB71B6D29C600FB99E0 /* EERequest.m in Sources */,
 				E1EF3C7D1B46F9CC00D0259F /* AppDelegate.m in Sources */,
-				E11DF2881B7B71CA00B27F90 /* EEPhoto.m in Sources */,
 				E11DDFA91B6D298900FB99E0 /* ViewController.m in Sources */,
 				E1EA05ED1B8DDB8800A9428F /* EEFullPhotoCell.m in Sources */,
 				E11DDFB31B6D29B000FB99E0 /* FriendsListVC.m in Sources */,
 				E1EF3C7A1B46F9CC00D0259F /* main.m in Sources */,
 				E11DDF871B6D27B200FB99E0 /* EEProcessor.m in Sources */,
-				E11DDFAE1B6D299C00FB99E0 /* LogInView.m in Sources */,
+				E11DDFAE1B6D299C00FB99E0 /* LogInVC.m in Sources */,
 				E1CD4A471B7A341B000D8D98 /* EEPhotoCell.m in Sources */,
 				E11DF28E1B7B80B400B27F90 /* EEResponsePhotoModel.m in Sources */,
 				E1EC5C231B8DBAFD007BA90F /* EEPhotoScrollView.m in Sources */,

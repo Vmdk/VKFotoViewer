@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
-@interface EEAlbum : UIViewController  <UICollectionViewDataSource, UICollectionViewDelegate> {
-    IBOutlet UICollectionView *_Collection;
+@interface EEAlbumVC : UIViewController  <UICollectionViewDataSource, UICollectionViewDelegate> {
+    IBOutlet UICollectionView *_collection;
     IBOutlet UIActivityIndicatorView* _spinner;
 }
 
-- (void)createAlbum:(NSString*)albId forUser:(NSString*)uId;
+- (void)createAlbum:(NSDictionary*)album;
 
 @end

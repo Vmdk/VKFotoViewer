@@ -11,11 +11,16 @@
 @implementation EEFullPhotoCell
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     // Initialization code
 }
 
-- (void)setPhoto:(NSString *)photo {
-    _Image.image = [self createPhoto:photo];
+- (void)layoutSubviews {
+    [super layoutSubviews];
+}
+
+- (void)setPhoto:(NSString *)photoURL {
+    _Image.image = [self createPhoto:photoURL];
 }
 
 - (UIImage *)createPhoto:(NSString*)photo {

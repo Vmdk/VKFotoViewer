@@ -31,7 +31,6 @@
     return res;
 }
 
-//returns photo_130
 - (UIImage *)getSmallPhoto {
     return [self createPhoto:_130];
 }
@@ -73,8 +72,8 @@
     return [self createPhoto:temp];
 }
 
-- (UIImage *)createPhoto:(NSString*)photo {
-    NSData *data =[[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:photo]];
+- (UIImage *)createPhoto:(NSString*)photoURL {
+    NSData *data =[[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:photoURL]];
     return [UIImage imageWithData:data];
 }
 @end

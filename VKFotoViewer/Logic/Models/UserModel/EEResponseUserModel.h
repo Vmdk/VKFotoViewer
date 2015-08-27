@@ -11,9 +11,9 @@
 
 @interface EEResponseUserModel : NSObject
 
-@property(nonatomic, retain) NSString* name;
-@property(nonatomic, retain) NSDictionary* tableInfo;
-@property(nonatomic, retain) UIImage* userPhoto;
+@property(nonatomic, copy) NSString* name;
+@property(nonatomic, copy) NSDictionary* tableInfo;
+@property(nonatomic, strong) UIImage* userPhoto;
 
 - (instancetype)initWithData:(NSDictionary*)lData;
 @end

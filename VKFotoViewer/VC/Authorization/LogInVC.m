@@ -6,12 +6,12 @@
 //  Copyright (c) 2015 Vdmk. All rights reserved.
 //
 
-#import "LogInView.h"
+#import "LogInVC.h"
 #import "ViewController.h"
 #import "EERequest.h"
 
 // TODO == 2
-@implementation LogInView
+@implementation LogInVC
 
 - (void)viewDidLoad
 {
@@ -21,13 +21,13 @@
     NSURL *lURL = [NSURL URLWithString:@"https://oauth.vk.com/authorize?client_id=4982333&scope=6&redirect_uri=https://oauth.vk.com/blank.html&display=mobile&v=5.34&response_type=token"];
     [_myBrowser loadRequest:[NSURLRequest requestWithURL:lURL]];
 }
+
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     // get token
     if ([request.URL.absoluteString rangeOfString:@"access_token"].location != NSNotFound) {
         NSString *accessToken = [self stringBetweenString:@"access_token="
                                                 andString:@"&"
                                               innerString:[[request URL] absoluteString]];
-        
         // get user's id
         NSArray *userAr = [[[request URL] absoluteString] componentsSeparatedByString:@"&user_id="];
         NSString *user_id = [userAr lastObject];

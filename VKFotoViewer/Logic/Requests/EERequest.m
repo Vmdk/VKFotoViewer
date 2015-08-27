@@ -8,7 +8,6 @@
 
 #import "EERequest.h"
 #import "AFNetworking.h"
-#import "EEInfo.h"
 
 @implementation EERequest
 

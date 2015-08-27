@@ -6,12 +6,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EEFriendInfoVC">
             <connections>
-                <outlet property="_TableWithInfo" destination="pqA-Ku-3Eo" id="8Cu-ao-YkH"/>
                 <outlet property="_name" destination="edh-fr-t7F" id="aYe-GZ-Xjh"/>
                 <outlet property="_photo" destination="zzv-mt-MT3" id="5yz-sA-Cf8"/>
                 <outlet property="_shortInfo" destination="SIT-Fo-gLP" id="7rh-kz-CT7"/>
                 <outlet property="_spinner" destination="GrU-Is-QpM" id="Wz0-IB-pbz"/>
-                <outlet property="view" destination="iN0-l3-epB" id="DFB-lk-oUg"/>
+                <outlet property="_tableWithUserInfo" destination="pqA-Ku-3Eo" id="UBS-xp-cyE"/>
+                <outlet property="view" destination="iN0-l3-epB" id="549-98-GKG"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -42,8 +42,8 @@
                     <rect key="frame" x="0.0" y="170" width="600" height="430"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="Oxv-b9-iAz"/>
-                        <outlet property="delegate" destination="-1" id="obn-OZ-GFz"/>
+                        <outlet property="dataSource" destination="-1" id="22m-3r-TKh"/>
+                        <outlet property="delegate" destination="-1" id="oA8-Mg-fQ2"/>
                     </connections>
                 </tableView>
                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="GrU-Is-QpM">
