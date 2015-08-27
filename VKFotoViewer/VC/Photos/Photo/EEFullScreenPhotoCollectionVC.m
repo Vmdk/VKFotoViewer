@@ -13,14 +13,12 @@
 
 @implementation EEFullScreenPhotoCollectionVC {
     NSArray* _photosURLArray;
-    BOOL* _isZoomed;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [_spinner startAnimating];
     [_collection registerNib:[UINib nibWithNibName:NSStringFromClass([EEFullPhotoCell class]) bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:FULL_SCREEN_CELL_IDENTIFIER];
-    _isZoomed = FALSE;
     
     _photosURLArray = [_delegate EEFullScreenPhotoViewDelegateGivePhotos];
     [_collection reloadData];

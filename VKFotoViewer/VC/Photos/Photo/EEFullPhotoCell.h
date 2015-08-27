@@ -10,8 +10,8 @@
 #import <Foundation/Foundation.h>
 
 @interface EEFullPhotoCell : UICollectionViewCell <UIScrollViewDelegate>{
-    IBOutlet UIImageView* _Image;
-    IBOutlet UIScrollView* _ScrollView;
+    IBOutlet UIImageView* _image;
+    IBOutlet UIScrollView* _scrollView;
 }
 
 - (void) setPhoto:(NSString*)photoURL;
