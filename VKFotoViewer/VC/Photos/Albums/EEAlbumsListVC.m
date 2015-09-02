@@ -33,7 +33,6 @@
         [_spinner stopAnimating];
     }];
 }
-
 #pragma mark - Table realization
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

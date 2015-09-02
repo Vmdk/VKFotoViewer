@@ -16,10 +16,10 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Ueh-99-tBz">
-                    <rect key="frame" x="0.0" y="60" width="600" height="50"/>
+                <searchBar contentMode="redraw" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="Ueh-99-tBz">
+                    <rect key="frame" x="0.0" y="65" width="600" height="40"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="PoQ-ap-Xef"/>
+                        <constraint firstAttribute="height" constant="40" id="k1t-iJ-4fR"/>
                     </constraints>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
@@ -27,8 +27,7 @@
                     </connections>
                 </searchBar>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="7Li-PR-Fr3">
-                    <rect key="frame" x="0.0" y="104" width="600" height="496"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <rect key="frame" x="0.0" y="105" width="600" height="495"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="uPy-Uf-S7Y"/>
                         <outlet property="delegate" destination="-1" id="fc5-qG-4GT"/>
@@ -37,15 +36,15 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="Ueh-99-tBz" secondAttribute="trailing" id="0US-7g-SKL"/>
-                <constraint firstItem="Ueh-99-tBz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="60" id="68Q-rG-d11"/>
-                <constraint firstItem="Ueh-99-tBz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="EbL-tr-vaM"/>
-                <constraint firstAttribute="trailing" secondItem="7Li-PR-Fr3" secondAttribute="trailing" id="UJo-JH-CWh"/>
-                <constraint firstItem="7Li-PR-Fr3" firstAttribute="top" secondItem="Ueh-99-tBz" secondAttribute="top" constant="44" id="eSI-sv-E9u"/>
-                <constraint firstItem="7Li-PR-Fr3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="eiD-4M-l0t"/>
-                <constraint firstAttribute="bottom" secondItem="7Li-PR-Fr3" secondAttribute="bottom" id="fhZ-96-6lS"/>
+                <constraint firstItem="7Li-PR-Fr3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="0Je-D5-Lxk"/>
+                <constraint firstItem="7Li-PR-Fr3" firstAttribute="top" secondItem="Ueh-99-tBz" secondAttribute="top" constant="40" id="BCO-ly-h3A"/>
+                <constraint firstAttribute="bottom" secondItem="7Li-PR-Fr3" secondAttribute="bottom" id="Ey5-oL-0GG"/>
+                <constraint firstItem="Ueh-99-tBz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="KZE-FP-Mdo"/>
+                <constraint firstItem="Ueh-99-tBz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="65" id="ds5-6I-ryK"/>
+                <constraint firstAttribute="trailing" secondItem="7Li-PR-Fr3" secondAttribute="trailing" id="e2z-ID-qJ6"/>
+                <constraint firstAttribute="trailing" secondItem="Ueh-99-tBz" secondAttribute="trailing" id="gac-9g-A5J"/>
             </constraints>
-            <point key="canvasLocation" x="484" y="136"/>
+            <point key="canvasLocation" x="489" y="110"/>
         </view>
     </objects>
 </document>

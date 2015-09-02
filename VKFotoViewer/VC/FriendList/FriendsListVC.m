@@ -12,8 +12,10 @@
 #import "EEAlbumsListVC.h"
 
 #define CELL_FOR_FRIEND_IDENTIFIER @"identifier"
+#define SEARCH_BAR_HEIGHT 40.0f
 
-@interface FriendsListVC () <UISearchBarDelegate, UISearchControllerDelegate>
+@interface FriendsListVC () <UISearchBarDelegate, UISearchControllerDelegate> {
+}
 
 @end
 
@@ -24,6 +26,8 @@
     NSInteger _rowsShown;
     BOOL _areAllFriendsShown;
     BOOL _isSearch;
+    CGFloat _lastContentOffset;
+    BOOL _searchBarIsHidden;
 }
 
 - (void)viewDidLoad {
@@ -32,6 +36,7 @@
     [self setFriends:[EERequest friendRequest]];
     _friendsList.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     _isSearch = NO;
+    _searchBarIsHidden = NO;
     
 }
 
@@ -68,7 +73,9 @@
     }
     return lCell;
 }
-
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 0.0f;
+}
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     EEAlbumsListVC* vc = [[EEAlbumsListVC alloc] init];
     [vc prepareInfoFor:_friendsId[indexPath.row]];
@@ -141,6 +148,28 @@
         _filteredUsersArray = (NSMutableArray*)[_names filteredArrayUsingPredicate:resultPredicate];
         [_friendsList reloadData];
     }
+}
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    _lastContentOffset = scrollView.contentOffset.y;
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if (_lastContentOffset > scrollView.contentOffset.y && _searchBarIsHidden) {
+        [UIView animateWithDuration:0.3f animations: ^{
+            _searchController.frame = CGRectMake(_searchController.frame.origin.x, _searchController.frame.origin.y, _searchController.frame.size.width, SEARCH_BAR_HEIGHT);
+            _searchBarIsHidden = NO;
+            _friendsList.frame = CGRectMake(_friendsList.frame.origin.x, _friendsList.frame.origin.y + SEARCH_BAR_HEIGHT, _friendsList.frame.size.width, _friendsList.frame.size.height - SEARCH_BAR_HEIGHT);
+            }];
+    }
+    else if (_lastContentOffset < scrollView.contentOffset.y && !_searchBarIsHidden) {
+        [UIView animateWithDuration:0.3f animations: ^{
+            _searchController.frame = CGRectMake(_searchController.frame.origin.x, _searchController.frame.origin.y, _searchController.frame.size.width, 0.0f);
+            _searchBarIsHidden = YES;
+            _friendsList.frame = CGRectMake(_friendsList.frame.origin.x, _friendsList.frame.origin.y - SEARCH_BAR_HEIGHT, _friendsList.frame.size.width, _friendsList.frame.size.height + SEARCH_BAR_HEIGHT);
+            }];
+    }
+    _lastContentOffset = scrollView.contentOffset.y;
 }
 
 @end
