@@ -10,6 +10,7 @@
 
 @interface FriendsListVC : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     IBOutlet UITableView *_friendsList;
+    IBOutlet UISearchBar *_searchController;
 }
 
 - (void)setFriends:(NSArray*)arr;

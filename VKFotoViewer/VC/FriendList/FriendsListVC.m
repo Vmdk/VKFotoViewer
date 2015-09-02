@@ -13,15 +13,17 @@
 
 #define CELL_FOR_FRIEND_IDENTIFIER @"identifier"
 
-@interface FriendsListVC ()
+@interface FriendsListVC () <UISearchBarDelegate, UISearchControllerDelegate>
 
 @end
 
 @implementation FriendsListVC {
     NSArray *_friendsId;
     NSMutableArray *_names;
+    NSMutableArray *_filteredUsersArray;
     NSInteger _rowsShown;
     BOOL _areAllFriendsShown;
+    BOOL _isSearch;
 }
 
 - (void)viewDidLoad {
@@ -29,6 +31,8 @@
     self.title = @"Friends";
     [self setFriends:[EERequest friendRequest]];
     _friendsList.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    _isSearch = NO;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,11 +41,15 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (_names.count < 15) {
-        _rowsShown = _names.count;
-    }
-    if(!_rowsShown) {
-        _rowsShown = 15;
+    if (_isSearch)
+    {
+        _rowsShown = _filteredUsersArray.count;
+    } else {
+        if(!_rowsShown) {
+            _rowsShown = 15;
+        } else {
+            _rowsShown = _names.count;
+        }
     }
     return _rowsShown;
 }
@@ -52,7 +60,12 @@
         lCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CELL_FOR_FRIEND_IDENTIFIER];
         lCell.accessoryType = UITableViewCellAccessoryDetailButton;
     }
-    lCell.textLabel.text = [_names objectAtIndex:indexPath.row];
+    if (_isSearch)
+    {
+        lCell.textLabel.text = [_filteredUsersArray objectAtIndex:indexPath.row];
+    } else {
+        lCell.textLabel.text = [_names objectAtIndex:indexPath.row];
+    }
     return lCell;
 }
 
@@ -70,25 +83,30 @@
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == _rowsShown - 1 && !_areAllFriendsShown) {
+    int temp = indexPath.row;
+    if (indexPath.row == _rowsShown - 1 && !_areAllFriendsShown && !_isSearch ) {
         [self uploadFriends];
     }
 }
 
+#pragma mark - uploading friends
+
 - (void)uploadFriends {
-    if(_rowsShown + 15 > _friendsId.count) {
-        for (NSInteger i = _rowsShown; i < _friendsId.count; ++i) {
-            _names[i] = [EERequest getNameForId:_friendsId[i]];
+    if (_names.count == _rowsShown) {
+        if(_rowsShown + 15 > _friendsId.count) {
+            for (NSInteger i = _rowsShown; i < _friendsId.count; ++i) {
+                _names[i] = [EERequest getNameForId:_friendsId[i]];
+            }
+            _rowsShown = (int)_friendsId.count;
+            _areAllFriendsShown = true;
         }
-        _rowsShown = (int)_friendsId.count;
-        _areAllFriendsShown = true;
-    }
-    else {
-        for (NSInteger i = _rowsShown; i < _rowsShown+15; ++i) {
-            _names[i] = [EERequest getNameForId:_friendsId[i]];
+        else {
+            for (NSInteger i = _rowsShown; i < _rowsShown+15; ++i) {
+                _names[i] = [EERequest getNameForId:_friendsId[i]];
+            }
+            _areAllFriendsShown = false;
+            _rowsShown += 15;
         }
-        _areAllFriendsShown = false;
-        _rowsShown += 15;
     }
     [_friendsList reloadData];
 }
@@ -105,7 +123,24 @@
         _names[i] = [EERequest getNameForId:arr[i]];
     }
     _areAllFriendsShown = false;
+    _filteredUsersArray = _names.copy;
     [_friendsList reloadData];
+}
+
+#pragma mark Content Search
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    _filteredUsersArray = [NSMutableArray array];
+    if ([searchText isEqualToString:@""]) {
+        _isSearch = false;
+        [_friendsList reloadData];
+    }
+    else {
+        _isSearch = true;
+        NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"SELF contains[cd] %@", searchText];
+        _filteredUsersArray = (NSMutableArray*)[_names filteredArrayUsingPredicate:resultPredicate];
+        [_friendsList reloadData];
+    }
 }
 
 @end

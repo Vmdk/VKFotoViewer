@@ -7,7 +7,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FriendsListVC">
             <connections>
                 <outlet property="_friendsList" destination="7Li-PR-Fr3" id="wSw-zt-BIz"/>
-                <outlet property="view" destination="iN0-l3-epB" id="U8Y-cA-MP8"/>
+                <outlet property="_searchController" destination="Ueh-99-tBz" id="DCl-BW-vA3"/>
+                <outlet property="view" destination="iN0-l3-epB" id="P6o-tz-uw2"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -15,8 +16,18 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Ueh-99-tBz">
+                    <rect key="frame" x="0.0" y="60" width="600" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="PoQ-ap-Xef"/>
+                    </constraints>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="OPM-3O-RGs"/>
+                    </connections>
+                </searchBar>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="7Li-PR-Fr3">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <rect key="frame" x="0.0" y="104" width="600" height="496"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="uPy-Uf-S7Y"/>
@@ -26,12 +37,15 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="Ueh-99-tBz" secondAttribute="trailing" id="0US-7g-SKL"/>
+                <constraint firstItem="Ueh-99-tBz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="60" id="68Q-rG-d11"/>
+                <constraint firstItem="Ueh-99-tBz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="EbL-tr-vaM"/>
                 <constraint firstAttribute="trailing" secondItem="7Li-PR-Fr3" secondAttribute="trailing" id="UJo-JH-CWh"/>
-                <constraint firstItem="7Li-PR-Fr3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Wt9-cJ-Sud"/>
+                <constraint firstItem="7Li-PR-Fr3" firstAttribute="top" secondItem="Ueh-99-tBz" secondAttribute="top" constant="44" id="eSI-sv-E9u"/>
                 <constraint firstItem="7Li-PR-Fr3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="eiD-4M-l0t"/>
                 <constraint firstAttribute="bottom" secondItem="7Li-PR-Fr3" secondAttribute="bottom" id="fhZ-96-6lS"/>
             </constraints>
-            <point key="canvasLocation" x="402" y="148"/>
+            <point key="canvasLocation" x="484" y="136"/>
         </view>
     </objects>
 </document>
