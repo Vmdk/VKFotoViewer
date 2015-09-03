@@ -10,6 +10,7 @@
 #import "EERequest.h"
 #import "EEFriendInfoVC.h"
 #import "EEAlbumsListVC.h"
+#import "ViewController.h"
 
 #define CELL_FOR_FRIEND_IDENTIFIER @"identifier"
 #define SEARCH_BAR_HEIGHT 40.0f
@@ -35,14 +36,26 @@
     self.title = @"Friends";
     [self setFriends:[EERequest friendRequest]];
     _friendsList.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    _isSearch = NO;
-    _searchBarIsHidden = NO;
     
+    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStylePlain target:self action:@selector(refreshPropertyList)];
+    self.navigationItem.rightBarButtonItem = anotherButton;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)refreshPropertyList {
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"VKAccessUserId"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"VKAccessToken"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"VKAccessTokenDate"];
+    [[NSURLCache sharedURLCache] removeAllCachedResponses];
+    
+    ViewController* vc = [[ViewController alloc] init];
+    [self presentViewController:vc animated:YES completion:^{
+        
+    }];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -90,7 +103,6 @@
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    int temp = indexPath.row;
     if (indexPath.row == _rowsShown - 1 && !_areAllFriendsShown && !_isSearch ) {
         [self uploadFriends];
     }
@@ -119,6 +131,10 @@
 }
 
 -(void)setFriends:(NSArray *)arr {
+    //default start boolean values
+    _isSearch = NO;
+    _searchBarIsHidden = NO;
+    
     _friendsId = arr;
     _names = [NSMutableArray array];
     int limit = 15;

@@ -49,7 +49,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     //NSLog([NSString stringWithFormat:@"%f %f",_Collection.frame.size.width, _Collection.frame.size.height ]);
-    return _collection.frame.size;
+    return _collection.bounds.size;
 }
 
 #pragma mark - inits

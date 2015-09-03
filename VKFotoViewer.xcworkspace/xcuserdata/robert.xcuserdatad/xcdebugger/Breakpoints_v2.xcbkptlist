@@ -61,12 +61,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VKFotoViewer/VC/Photos/Photo/EEFullPhotoCell.m"
-            timestampString = "462558699.08109"
+            timestampString = "462989588.149798"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
-            landmarkName = "-setFrameWhileZoomed"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
+            landmarkName = "-commentButtonClicked:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -77,13 +77,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VKFotoViewer/VC/FriendList/FriendsListVC.m"
-            timestampString = "462908123.695482"
+            timestampString = "462988002.392285"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
             landmarkName = "@interface FriendsListVC()"
             landmarkType = "2">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VKFotoViewer/VC/StartVC/ViewController.m"
+            timestampString = "462988050.025876"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "-logInClick:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VKFotoViewer/VC/Authorization/LogInVC.m"
+            timestampString = "462988089.441402"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

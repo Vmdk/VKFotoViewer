@@ -164,4 +164,16 @@
 {
     return _image;
 }
+
+#pragma mark - Buttons
+
+-(IBAction)commentButtonClicked:(id)sender {
+    NSLog(@"clicked");
+}
+-(IBAction)likeButtonClicked:(id)sender {
+    NSLog(@"liked");
+}
+-(IBAction)shareButtonClicked:(id)sender {
+    NSLog(@"sharing");
+}
 @end

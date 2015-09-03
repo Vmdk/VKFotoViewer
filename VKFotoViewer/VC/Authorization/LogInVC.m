@@ -16,8 +16,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //cleaning catche. Should be removed smwhr TODO
-    //[[NSURLCache sharedURLCache] removeAllCachedResponses];
     NSURL *lURL = [NSURL URLWithString:@"https://oauth.vk.com/authorize?client_id=4982333&scope=6&redirect_uri=https://oauth.vk.com/blank.html&display=mobile&v=5.34&response_type=token"];
     [_myBrowser loadRequest:[NSURLRequest requestWithURL:lURL]];
 }

@@ -60,7 +60,7 @@
                     <constraint firstItem="kjw-SE-a7S" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="K98-Oq-nFn"/>
                     <constraint firstItem="i7Q-0O-Uja" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="f1W-XO-BGh"/>
                     <constraint firstAttribute="bottomMargin" secondItem="i7Q-0O-Uja" secondAttribute="bottom" id="hsc-tK-HbH"/>
-                    <constraint firstAttribute="centerX" secondItem="i7Q-0O-Uja" secondAttribute="centerX" constant="0.5" id="jLc-qP-E9N"/>
+                    <constraint firstAttribute="centerX" secondItem="i7Q-0O-Uja" secondAttribute="centerX" id="jLc-qP-E9N"/>
                     <constraint firstItem="kjw-SE-a7S" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="jgP-dN-gEs"/>
                     <constraint firstAttribute="trailingMargin" secondItem="kjw-SE-a7S" secondAttribute="trailing" id="pM1-bH-wCC"/>
                 </constraints>
@@ -70,7 +70,7 @@
                 <outlet property="_albumName" destination="QIm-Sg-0i4" id="YE9-ZY-Icr"/>
                 <outlet property="_albumPhoto" destination="i7Q-0O-Uja" id="xAV-ss-xz0"/>
             </connections>
-            <point key="canvasLocation" x="350.5" y="309"/>
+            <point key="canvasLocation" x="366.5" y="318"/>
         </tableViewCell>
     </objects>
 </document>

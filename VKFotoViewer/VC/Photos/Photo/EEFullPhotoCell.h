@@ -12,6 +12,9 @@
 @interface EEFullPhotoCell : UICollectionViewCell <UIScrollViewDelegate>{
     IBOutlet UIImageView* _image;
     IBOutlet UIScrollView* _scrollView;
+    IBOutlet UIButton* _likeButton;
+    IBOutlet UIButton* _shareButton;
+    IBOutlet UIButton* _commentButton;
 }
 
 - (void) setPhoto:(NSString*)photoURL;

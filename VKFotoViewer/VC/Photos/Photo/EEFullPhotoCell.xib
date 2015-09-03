@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EEFullPhotoCell"/>
@@ -12,51 +13,6 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="642" height="549"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kDZ-fm-hIB">
-                        <rect key="frame" x="0.0" y="489" width="642" height="60"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BAH-mT-EQ0">
-                                <rect key="frame" x="542" y="5" width="100" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="hFZ-Qs-diX"/>
-                                </constraints>
-                                <state key="normal" title="Comment">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hin-am-3bE" userLabel="Like">
-                                <rect key="frame" x="293" y="0.0" width="40" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="XYt-0S-2Si"/>
-                                </constraints>
-                                <state key="normal" title="Like">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgn-tc-Tc5">
-                                <rect key="frame" x="0.0" y="5" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="vOg-M9-tpj"/>
-                                </constraints>
-                                <state key="normal" title="Share">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerX" secondItem="hin-am-3bE" secondAttribute="centerX" constant="8" id="BAd-5Q-uYA"/>
-                            <constraint firstItem="bgn-tc-Tc5" firstAttribute="leading" secondItem="kDZ-fm-hIB" secondAttribute="leading" id="Bwf-Wy-TvA"/>
-                            <constraint firstItem="BAH-mT-EQ0" firstAttribute="top" secondItem="kDZ-fm-hIB" secondAttribute="top" constant="5" id="LaS-YH-Sh6"/>
-                            <constraint firstAttribute="bottom" secondItem="BAH-mT-EQ0" secondAttribute="bottom" constant="5" id="NRd-IP-EoY"/>
-                            <constraint firstAttribute="bottom" secondItem="bgn-tc-Tc5" secondAttribute="bottom" constant="5" id="RPG-Re-fTl"/>
-                            <constraint firstAttribute="bottom" secondItem="hin-am-3bE" secondAttribute="bottom" id="g5h-RS-kMT"/>
-                            <constraint firstItem="hin-am-3bE" firstAttribute="top" secondItem="kDZ-fm-hIB" secondAttribute="top" id="juA-zz-ycD"/>
-                            <constraint firstAttribute="height" constant="60" id="mVS-rE-Xhi"/>
-                            <constraint firstAttribute="trailing" secondItem="BAH-mT-EQ0" secondAttribute="trailing" id="r1j-al-HEw"/>
-                            <constraint firstItem="bgn-tc-Tc5" firstAttribute="top" secondItem="kDZ-fm-hIB" secondAttribute="top" constant="5" id="ybA-At-uSb"/>
-                        </constraints>
-                    </view>
                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="8" translatesAutoresizingMaskIntoConstraints="NO" id="6c2-dO-CNb">
                         <rect key="frame" x="0.0" y="0.0" width="642" height="549"/>
                         <subviews>
@@ -78,23 +34,87 @@
                             <outlet property="delegate" destination="gTV-IL-0wX" id="00r-fB-dvG"/>
                         </connections>
                     </scrollView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kDZ-fm-hIB">
+                        <rect key="frame" x="8" y="461" width="626" height="60"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BAH-mT-EQ0">
+                                <rect key="frame" x="526" y="0.0" width="100" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="hFZ-Qs-diX"/>
+                                </constraints>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Comment">
+                                            <attributes>
+                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="15" name="HelveticaNeue"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="commentButtonClicked:" destination="gTV-IL-0wX" eventType="touchUpInside" id="kIP-DU-bAp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hin-am-3bE" userLabel="Like">
+                                <rect key="frame" x="283" y="0.0" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="XYt-0S-2Si"/>
+                                </constraints>
+                                <state key="normal" title="Like">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="likeButtonClicked:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Nr4-R4-ifx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgn-tc-Tc5">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="vOg-M9-tpj"/>
+                                </constraints>
+                                <state key="normal" title="Share">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareButtonClicked:" destination="gTV-IL-0wX" eventType="touchUpInside" id="gKn-DD-m9Q"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="hin-am-3bE" secondAttribute="centerX" id="BAd-5Q-uYA"/>
+                            <constraint firstItem="bgn-tc-Tc5" firstAttribute="leading" secondItem="kDZ-fm-hIB" secondAttribute="leading" id="Bwf-Wy-TvA"/>
+                            <constraint firstItem="BAH-mT-EQ0" firstAttribute="top" secondItem="kDZ-fm-hIB" secondAttribute="top" id="LaS-YH-Sh6"/>
+                            <constraint firstAttribute="bottom" secondItem="BAH-mT-EQ0" secondAttribute="bottom" id="NRd-IP-EoY"/>
+                            <constraint firstAttribute="bottom" secondItem="bgn-tc-Tc5" secondAttribute="bottom" id="RPG-Re-fTl"/>
+                            <constraint firstItem="hin-am-3bE" firstAttribute="top" secondItem="kDZ-fm-hIB" secondAttribute="top" id="ZUL-mL-Y53"/>
+                            <constraint firstAttribute="trailing" secondItem="BAH-mT-EQ0" secondAttribute="trailing" id="aGt-Db-eYx"/>
+                            <constraint firstAttribute="bottom" secondItem="hin-am-3bE" secondAttribute="bottom" id="g5h-RS-kMT"/>
+                            <constraint firstAttribute="height" constant="60" id="mVS-rE-Xhi"/>
+                            <constraint firstItem="bgn-tc-Tc5" firstAttribute="top" secondItem="kDZ-fm-hIB" secondAttribute="top" id="ybA-At-uSb"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="kDZ-fm-hIB" secondAttribute="trailing" id="5Fr-x6-WjS"/>
+                <constraint firstAttribute="trailingMargin" secondItem="kDZ-fm-hIB" secondAttribute="trailing" id="2rb-9R-jyl"/>
+                <constraint firstAttribute="bottomMargin" secondItem="kDZ-fm-hIB" secondAttribute="bottom" constant="20" id="H1V-qD-xgc"/>
                 <constraint firstAttribute="bottom" secondItem="6c2-dO-CNb" secondAttribute="bottom" id="Iem-YT-bGE"/>
                 <constraint firstItem="6c2-dO-CNb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Nc8-gk-hfM"/>
-                <constraint firstAttribute="centerX" secondItem="kDZ-fm-hIB" secondAttribute="centerX" id="Vwk-zf-boA"/>
-                <constraint firstItem="kDZ-fm-hIB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="XXO-wa-Tj0"/>
+                <constraint firstItem="kDZ-fm-hIB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leadingMargin" id="Qnw-1U-WW0"/>
                 <constraint firstItem="6c2-dO-CNb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ZFF-HI-xUX"/>
-                <constraint firstAttribute="bottom" secondItem="kDZ-fm-hIB" secondAttribute="bottom" id="eBO-Pu-ePl"/>
                 <constraint firstAttribute="trailing" secondItem="6c2-dO-CNb" secondAttribute="trailing" id="fSK-p9-psj"/>
             </constraints>
             <size key="customSize" width="642" height="549"/>
             <connections>
+                <outlet property="_commentButton" destination="BAH-mT-EQ0" id="62h-x5-7S1"/>
                 <outlet property="_image" destination="6xc-Ue-b6d" id="fo7-Zg-Suh"/>
+                <outlet property="_likeButton" destination="hin-am-3bE" id="3WP-ZO-LSS"/>
                 <outlet property="_scrollView" destination="6c2-dO-CNb" id="OuD-QG-RDa"/>
+                <outlet property="_shareButton" destination="bgn-tc-Tc5" id="r2u-Fq-OXg"/>
             </connections>
             <point key="canvasLocation" x="729" y="565.5"/>
         </collectionViewCell>
