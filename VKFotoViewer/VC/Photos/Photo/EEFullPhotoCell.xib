@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EEFullPhotoCell"/>
@@ -34,11 +33,11 @@
                             <outlet property="delegate" destination="gTV-IL-0wX" id="00r-fB-dvG"/>
                         </connections>
                     </scrollView>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kDZ-fm-hIB">
-                        <rect key="frame" x="8" y="461" width="626" height="60"/>
+                    <view alpha="0.49999999999999961" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kDZ-fm-hIB">
+                        <rect key="frame" x="0.0" y="459" width="642" height="60"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BAH-mT-EQ0">
-                                <rect key="frame" x="526" y="0.0" width="100" height="60"/>
+                                <rect key="frame" x="542" y="0.0" width="100" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="hFZ-Qs-diX"/>
                                 </constraints>
@@ -57,7 +56,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hin-am-3bE" userLabel="Like">
-                                <rect key="frame" x="283" y="0.0" width="60" height="60"/>
+                                <rect key="frame" x="291" y="0.0" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="XYt-0S-2Si"/>
                                 </constraints>
@@ -82,7 +81,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="hin-am-3bE" secondAttribute="centerX" id="BAd-5Q-uYA"/>
                             <constraint firstItem="bgn-tc-Tc5" firstAttribute="leading" secondItem="kDZ-fm-hIB" secondAttribute="leading" id="Bwf-Wy-TvA"/>
@@ -100,16 +99,17 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
-                <constraint firstAttribute="trailingMargin" secondItem="kDZ-fm-hIB" secondAttribute="trailing" id="2rb-9R-jyl"/>
-                <constraint firstAttribute="bottomMargin" secondItem="kDZ-fm-hIB" secondAttribute="bottom" constant="20" id="H1V-qD-xgc"/>
+                <constraint firstAttribute="trailing" secondItem="kDZ-fm-hIB" secondAttribute="trailing" id="2rb-9R-jyl"/>
                 <constraint firstAttribute="bottom" secondItem="6c2-dO-CNb" secondAttribute="bottom" id="Iem-YT-bGE"/>
                 <constraint firstItem="6c2-dO-CNb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Nc8-gk-hfM"/>
-                <constraint firstItem="kDZ-fm-hIB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leadingMargin" id="Qnw-1U-WW0"/>
+                <constraint firstItem="kDZ-fm-hIB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Qnw-1U-WW0"/>
                 <constraint firstItem="6c2-dO-CNb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ZFF-HI-xUX"/>
                 <constraint firstAttribute="trailing" secondItem="6c2-dO-CNb" secondAttribute="trailing" id="fSK-p9-psj"/>
+                <constraint firstAttribute="bottom" secondItem="kDZ-fm-hIB" secondAttribute="bottom" constant="30" id="tav-Dz-Ql3"/>
             </constraints>
             <size key="customSize" width="642" height="549"/>
             <connections>
+                <outlet property="_buttonView" destination="kDZ-fm-hIB" id="ICk-G8-6X2"/>
                 <outlet property="_commentButton" destination="BAH-mT-EQ0" id="62h-x5-7S1"/>
                 <outlet property="_image" destination="6xc-Ue-b6d" id="fo7-Zg-Suh"/>
                 <outlet property="_likeButton" destination="hin-am-3bE" id="3WP-ZO-LSS"/>

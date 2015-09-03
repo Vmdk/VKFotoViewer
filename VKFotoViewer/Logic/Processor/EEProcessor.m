@@ -9,6 +9,7 @@
 #import "EEProcessor.h"
 #import "EERequest.h"
 #import "EEResponsePhotoModel.h"
+#import "EEUserForListModel.h"
 
 @implementation EEProcessor
 
@@ -30,6 +31,15 @@
         NSArray* modelArray = [EEResponsePhotoModel createModelArray:photos];
         createPhotos(modelArray);
     }];
-    
+}
+
++ (void)createFriendsList:(void (^)(NSArray *))fillList {
+    [EERequest getFriendsArrayWithNamesAndCreateModels:^(NSArray *arrayOfFriends) {
+        NSMutableArray *arrayOfModels = [NSMutableArray arrayWithCapacity:arrayOfFriends.count];
+        for (int i = 0; i < arrayOfFriends.count; i++) {
+            arrayOfModels[i] = [[EEUserForListModel alloc] initWithValue:arrayOfFriends[i]];
+        }
+        fillList(arrayOfModels);
+    }];
 }
 @end

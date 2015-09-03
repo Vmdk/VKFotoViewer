@@ -10,8 +10,7 @@
 
 @interface EERequest : NSObject
 
-+ (NSArray*)friendRequest;
-+ (NSString*)getNameForId:(NSString*)curId;
++ (void)getFriendsArrayWithNamesAndCreateModels:(void (^)(NSArray *))createUserModels;
 + (void)getIdInfo:(NSString*)curId
             successBlock:(void (^)(NSDictionary*))createInfo;
 + (void)getCity:(NSString*)cId

@@ -14,4 +14,5 @@
 + (void)friendId:(NSString*)fId fillInfo:(void (^)(EEResponseUserModel*))fillOrder;
 + (void)prepareAlbumsFor:(NSString*)uId successBlock:(void (^)(NSArray*))createAlbums;
 + (void)createAlbum:(NSString*)albId forUser:(NSString*)uId withPhotos:(void (^)(NSArray*))createPhotos;
++ (void)createFriendsList:(void (^)(NSArray*))fillList;
 @end

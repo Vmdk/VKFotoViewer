@@ -22,6 +22,11 @@
     doubleTapRecognizer.numberOfTouchesRequired = 1;
     [_scrollView addGestureRecognizer:doubleTapRecognizer];
     
+    UITapGestureRecognizer *oneTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scrollViewOnceTapped:)];
+    oneTapRecognizer.numberOfTapsRequired = 1;
+    oneTapRecognizer.numberOfTouchesRequired = 1;
+    [_scrollView addGestureRecognizer:oneTapRecognizer];
+    
 }
 - (void)syncronizeFrames {
     
@@ -84,6 +89,24 @@
     }
 }
 
+-(void)scrollViewOnceTapped:(UITapGestureRecognizer*)recognizer {
+    if (_shareButton.isEnabled) {
+        [UIView animateWithDuration:0.3f animations: ^{
+            _buttonView.alpha = 0.0f;
+            _shareButton.enabled = false;
+            _likeButton.enabled = false;
+            _commentButton.enabled = false;
+        }];
+    }
+    else {
+        [UIView animateWithDuration:0.3f animations: ^{
+            _buttonView.alpha = 0.5f;
+            _shareButton.enabled = true;
+            _likeButton.enabled = true;
+            _commentButton.enabled = true;
+        }];
+    }
+}
 #pragma ZoomControllingMethods
 
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView {

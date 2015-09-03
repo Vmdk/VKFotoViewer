@@ -11,6 +11,8 @@
 #import "EEFriendInfoVC.h"
 #import "EEAlbumsListVC.h"
 #import "ViewController.h"
+#import "EEProcessor.h"
+#import "EEUserForListModel.h"
 
 #define CELL_FOR_FRIEND_IDENTIFIER @"identifier"
 #define SEARCH_BAR_HEIGHT 40.0f
@@ -21,7 +23,7 @@
 @end
 
 @implementation FriendsListVC {
-    NSArray *_friendsId;
+    NSMutableArray *_friendsId;
     NSMutableArray *_names;
     NSMutableArray *_filteredUsersArray;
     NSInteger _rowsShown;
@@ -34,7 +36,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Friends";
-    [self setFriends:[EERequest friendRequest]];
+    [EEProcessor createFriendsList:^(NSArray *arrayOfModels) {
+         [self setFriends:arrayOfModels];
+    }];
     _friendsList.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
     UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStylePlain target:self action:@selector(refreshPropertyList)];
@@ -46,6 +50,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Logout
+
 -(void)refreshPropertyList {
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"VKAccessUserId"];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"VKAccessToken"];
@@ -54,20 +60,18 @@
     
     ViewController* vc = [[ViewController alloc] init];
     [self presentViewController:vc animated:YES completion:^{
-        
+       //todo
     }];
 }
+
+#pragma mark - Table Realization
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (_isSearch)
     {
         _rowsShown = _filteredUsersArray.count;
     } else {
-        if(!_rowsShown) {
-            _rowsShown = 15;
-        } else {
-            _rowsShown = _names.count;
-        }
+        _rowsShown = _names.count;
     }
     return _rowsShown;
 }
@@ -101,51 +105,33 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
--(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (indexPath.row == _rowsShown - 1 && !_areAllFriendsShown && !_isSearch ) {
-        [self uploadFriends];
-    }
-}
-
 #pragma mark - uploading friends
 
-- (void)uploadFriends {
-    if (_names.count == _rowsShown) {
-        if(_rowsShown + 15 > _friendsId.count) {
-            for (NSInteger i = _rowsShown; i < _friendsId.count; ++i) {
-                _names[i] = [EERequest getNameForId:_friendsId[i]];
-            }
-            _rowsShown = (int)_friendsId.count;
-            _areAllFriendsShown = true;
-        }
-        else {
-            for (NSInteger i = _rowsShown; i < _rowsShown+15; ++i) {
-                _names[i] = [EERequest getNameForId:_friendsId[i]];
-            }
-            _areAllFriendsShown = false;
-            _rowsShown += 15;
-        }
+- (void)showMoreFriends {
+    if(_rowsShown + 15 > _friendsId.count) {
+        _rowsShown = (int)_friendsId.count;
+        _areAllFriendsShown = true;
+    }
+    else {
+        _areAllFriendsShown = false;
+        _rowsShown += 15;
     }
     [_friendsList reloadData];
 }
 
--(void)setFriends:(NSArray *)arr {
+-(void)setFriends:(NSArray *)arrayOfModels {
     //default start boolean values
     _isSearch = NO;
     _searchBarIsHidden = NO;
     
-    _friendsId = arr;
-    _names = [NSMutableArray array];
-    int limit = 15;
-    if (arr.count < 15) {
-        limit = (int)arr.count;
-        _areAllFriendsShown = true;
-    }
+    _friendsId = [NSMutableArray arrayWithCapacity:arrayOfModels.count];
+    _names = [NSMutableArray arrayWithCapacity:arrayOfModels.count];
+    
+    int limit = (int)arrayOfModels.count;
     for (int i = 0; i < limit; ++i) {
-        _names[i] = [EERequest getNameForId:arr[i]];
+        _names[i] = [(EEUserForListModel*)arrayOfModels[i] getName];
+        _friendsId[i] = [(EEUserForListModel*)arrayOfModels[i] getId];
     }
-    _areAllFriendsShown = false;
     _filteredUsersArray = _names.copy;
     [_friendsList reloadData];
 }

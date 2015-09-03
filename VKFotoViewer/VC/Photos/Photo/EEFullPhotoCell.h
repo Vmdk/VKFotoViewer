@@ -15,6 +15,7 @@
     IBOutlet UIButton* _likeButton;
     IBOutlet UIButton* _shareButton;
     IBOutlet UIButton* _commentButton;
+    IBOutlet UIView* _buttonView;
 }
 
 - (void) setPhoto:(NSString*)photoURL;
